@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../IR"
+		},
+		{
+			"name": "IR_all_japan_2024_trial",
+			"path": "../IR_all_japan_2024_trial"
+		}
+	],
+	"settings": {}
+}
