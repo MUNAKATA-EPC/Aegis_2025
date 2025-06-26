@@ -1,19 +1,14 @@
-Munako-Aegisのリポジトリです！
+🏆 Competition Results
+<2024 Season>
+Kitakyushu Node Tournament → 🥇 Champion (A Court)
 
-Munako-Aegis　soccer_Lighit_weight_League
+Kyushu Block Tournament → 🥇 Champion, 🏅 Best Presentation Award
 
-<2024season>
+Japan Open → 🏅 31st place
 
-北九州ノード大会→Aコート優勝
+<2025 Season>
+Fukuoka Node Tournament → 🥇 Champion
 
-九州ブロック大会→優勝、優秀プレゼンテーション賞
+Kyushu Block Tournament → 🥇 Champion
 
-ジャパンオープン→31位
-
-<2025season>
-
-福岡ノード大会→優勝
-
-九州ブロック大会→優勝
-
-全国大会→優勝、優秀プレゼンテーション賞
+All Japan Championship → 🥇 Champion, 🏅 Best Presentation Award
