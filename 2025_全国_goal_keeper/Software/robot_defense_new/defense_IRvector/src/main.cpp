@@ -2,7 +2,7 @@
 #include <average.h>
 #include <IR_multi.h>
 
-// Mux 制御ピン
+// Mux 制御ピン ba
 #define s0 1
 #define s1 2
 #define s2 3
