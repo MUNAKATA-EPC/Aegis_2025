@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "K15A20D")(type "KiCad")(uri "D:/部活/基板/電源基板/K15A20D")(options "")(descr ""))
+  (lib (name "XL6009")(type "KiCad")(uri "D:/部活/基板/電源基板/XL6009")(options "")(descr ""))
+  (lib (name "JLCPCB")(type "KiCad")(uri "D:/部活/基板/電源基板/JLCPCB")(options "")(descr ""))
+  (lib (name "Aegis")(type "KiCad")(uri "D:/部活/基板/電源基板/Aegis")(options "")(descr ""))
+)

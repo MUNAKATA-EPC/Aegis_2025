@@ -1,0 +1,9 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Seeeduino_Xiao")(type "KiCad")(uri "D:/kicad part2/フットプリント/Seeeduino_Xiao")(options "")(descr ""))
+  (lib (name "LCD__")(type "KiCad")(uri "D:/kicad part2/sensor/IR_Bored/LCD__")(options "")(descr ""))
+  (lib (name "Open_MV")(type "KiCad")(uri "D:/kicad part2/sensor/IR_Bored/Open_MV")(options "")(descr ""))
+  (lib (name "switch")(type "KiCad")(uri "D:/kicad part2/sensor/IR_Bored/switch")(options "")(descr ""))
+  (lib (name "Aegis")(type "KiCad")(uri "D:/部活/基板/sensor/IR_Bored/Aegis")(options "")(descr ""))
+  (lib (name "JLCPCB")(type "KiCad")(uri "D:/部活/基板/sensor/IR_Bored/JLCPCB")(options "")(descr ""))
+)

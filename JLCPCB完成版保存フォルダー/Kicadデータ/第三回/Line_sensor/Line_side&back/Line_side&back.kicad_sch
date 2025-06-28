@@ -1,0 +1,2859 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 3426c485-fafc-4baa-b714-5cba6df01dfb)
+
+  (paper "A4")
+
+  (lib_symbols
+    (symbol "Connector:Conn_01x04_Socket" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "Conn_01x04_Socket" (at 0 -7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "connector" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Generic connector, single row, 01x04, script generated" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Conn_01x04_Socket_1_1"
+        (arc (start 0 -4.572) (mid -0.5058 -5.08) (end 0 -5.588)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (arc (start 0 -2.032) (mid -0.5058 -2.54) (end 0 -3.048)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 -5.08)
+            (xy -0.508 -5.08)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 -2.54)
+            (xy -0.508 -2.54)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 0)
+            (xy -0.508 0)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 2.54)
+            (xy -0.508 2.54)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (arc (start 0 0.508) (mid -0.5058 0) (end 0 -0.508)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (arc (start 0 3.048) (mid -0.5058 2.54) (end 0 2.032)
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
+        )
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "Pin_1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 0 0) (length 3.81)
+          (name "Pin_2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "Pin_3" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -5.08 0) (length 3.81)
+          (name "Pin_4" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "Device:LED" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "LED" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "LED diode" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Light emitting diode" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "LED_0_1"
+        (polyline
+          (pts
+            (xy -1.27 -1.27)
+            (xy -1.27 1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 0)
+            (xy 1.27 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 -1.27)
+            (xy 1.27 1.27)
+            (xy -1.27 0)
+            (xy 1.27 -1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -3.048 -0.762)
+            (xy -4.572 -2.286)
+            (xy -3.81 -2.286)
+            (xy -4.572 -2.286)
+            (xy -4.572 -1.524)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.778 -0.762)
+            (xy -3.302 -2.286)
+            (xy -2.54 -2.286)
+            (xy -3.302 -2.286)
+            (xy -3.302 -1.524)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "LED_1_1"
+        (pin passive line (at -3.81 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 2.54)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "Device:Q_Photo_NPN" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "Q" (at 5.08 1.27 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "Q_Photo_NPN" (at 5.08 -1.27 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "" (at 5.08 2.54 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "phototransistor NPN" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "NPN phototransistor, collector/emitter" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Q_Photo_NPN_0_1"
+        (polyline
+          (pts
+            (xy -1.905 1.27)
+            (xy -2.54 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 2.54)
+            (xy -1.905 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0.635 0.635)
+            (xy 2.54 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -3.81 3.175)
+            (xy -1.905 1.27)
+            (xy -1.905 1.905)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -3.175 4.445)
+            (xy -1.27 2.54)
+            (xy -1.27 3.175)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0.635 -0.635)
+            (xy 2.54 -2.54)
+            (xy 2.54 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0.635 1.905)
+            (xy 0.635 -1.905)
+            (xy 0.635 -1.905)
+          )
+          (stroke (width 0.508) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 -1.778)
+            (xy 1.778 -1.27)
+            (xy 2.286 -2.286)
+            (xy 1.27 -1.778)
+            (xy 1.27 -1.778)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (circle (center 1.27 0) (radius 2.8194)
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "Q_Photo_NPN_1_1"
+        (pin passive line (at 2.54 5.08 270) (length 2.54)
+          (name "C" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 2.54 -5.08 90) (length 2.54)
+          (name "E" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "Device:R" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 2.032 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "R" (at 0 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at -1.778 0 90)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "R res resistor" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Resistor" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "R_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "R_0_1"
+        (rectangle (start -1.016 -2.54) (end 1.016 2.54)
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "R_1_1"
+        (pin passive line (at 0 3.81 270) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -3.81 90) (length 1.27)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "Device:R_Potentiometer_Trim_US" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "RV" (at -4.445 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "R_Potentiometer_Trim_US" (at -2.54 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "resistor variable trimpot trimmer" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Trim-potentiometer, US symbol" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "Potentiometer*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "R_Potentiometer_Trim_US_0_1"
+        (polyline
+          (pts
+            (xy 0 -2.286)
+            (xy 0 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.286)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.524 0.762)
+            (xy 1.524 -0.762)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 2.54 0)
+            (xy 1.524 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 -0.762)
+            (xy 1.016 -1.143)
+            (xy 0 -1.524)
+            (xy -1.016 -1.905)
+            (xy 0 -2.286)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 0.762)
+            (xy 1.016 0.381)
+            (xy 0 0)
+            (xy -1.016 -0.381)
+            (xy 0 -0.762)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.286)
+            (xy 1.016 1.905)
+            (xy 0 1.524)
+            (xy -1.016 1.143)
+            (xy 0 0.762)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "R_Potentiometer_Trim_US_1_1"
+        (pin passive line (at 0 3.81 270) (length 1.27)
+          (name "1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 1.27)
+          (name "2" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -3.81 90) (length 1.27)
+          (name "3" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "power:+3.3V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "+3.3V" (at 0 3.556 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global power" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"+3.3V\"" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "+3.3V_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.54)
+            (xy 0.762 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "+3.3V_1_1"
+        (pin power_in line (at 0 0 90) (length 0) hide
+          (name "+3.3V" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "power:+5V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "+5V" (at 0 3.556 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global power" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"+5V\"" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "+5V_0_1"
+        (polyline
+          (pts
+            (xy -0.762 1.27)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 2.54)
+            (xy 0.762 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "+5V_1_1"
+        (pin power_in line (at 0 0 90) (length 0) hide
+          (name "+5V" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -6.35 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "GND" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global power" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "GND_0_1"
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 -1.27)
+            (xy 1.27 -1.27)
+            (xy 0 -2.54)
+            (xy -1.27 -1.27)
+            (xy 0 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "GND_1_1"
+        (pin power_in line (at 0 0 270) (length 0) hide
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+  )
+
+  (junction (at 171.45 50.8) (diameter 0) (color 0 0 0 0)
+    (uuid 057bf9d3-681c-4204-9b3a-a3edee9ea913)
+  )
+  (junction (at 143.51 81.28) (diameter 0) (color 0 0 0 0)
+    (uuid 067ea7ef-d769-4a98-8e92-6d3e38f19f18)
+  )
+  (junction (at 128.27 81.28) (diameter 0) (color 0 0 0 0)
+    (uuid 067f3780-3050-4716-8fa1-d975d7386f79)
+  )
+  (junction (at 143.51 86.36) (diameter 0) (color 0 0 0 0)
+    (uuid 11e8a286-935b-4aad-837f-550bdddb28f8)
+  )
+  (junction (at 128.27 93.98) (diameter 0) (color 0 0 0 0)
+    (uuid 1427f613-1f44-4172-b40d-901bbec5c0fb)
+  )
+  (junction (at 182.88 33.02) (diameter 0) (color 0 0 0 0)
+    (uuid 1efbebba-52b0-48fd-80ee-03bd0e3144b6)
+  )
+  (junction (at 171.45 121.92) (diameter 0) (color 0 0 0 0)
+    (uuid 20879f77-5088-416d-831b-dac1179338ef)
+  )
+  (junction (at 161.29 121.92) (diameter 0) (color 0 0 0 0)
+    (uuid 21bd931e-723b-4219-9c6d-5835577a669d)
+  )
+  (junction (at 171.45 113.03) (diameter 0) (color 0 0 0 0)
+    (uuid 2a0a39b5-59d0-4d38-9759-5cd677236848)
+  )
+  (junction (at 143.51 91.44) (diameter 0) (color 0 0 0 0)
+    (uuid 31102bf2-ea42-41be-a856-27f8657bf5f8)
+  )
+  (junction (at 143.51 96.52) (diameter 0) (color 0 0 0 0)
+    (uuid 3fb04149-69fb-4308-a423-956f9c1465f3)
+  )
+  (junction (at 161.29 41.91) (diameter 0) (color 0 0 0 0)
+    (uuid 5ee186ad-136c-4900-a2c6-51ff1720cd2c)
+  )
+  (junction (at 161.29 77.47) (diameter 0) (color 0 0 0 0)
+    (uuid 6452dae3-f2f3-4e7d-9139-befcc6b125c7)
+  )
+  (junction (at 143.51 99.06) (diameter 0) (color 0 0 0 0)
+    (uuid 6a607267-63f9-411c-a993-aa00c43b776a)
+  )
+  (junction (at 128.27 86.36) (diameter 0) (color 0 0 0 0)
+    (uuid 6fe361cf-7c7b-4233-be86-82410aba4977)
+  )
+  (junction (at 128.27 78.74) (diameter 0) (color 0 0 0 0)
+    (uuid 78a91ad2-fb97-48d3-ac9c-0375168a6f35)
+  )
+  (junction (at 161.29 86.36) (diameter 0) (color 0 0 0 0)
+    (uuid 78ad9490-c889-4fb6-8f0a-7d39880df600)
+  )
+  (junction (at 143.51 83.82) (diameter 0) (color 0 0 0 0)
+    (uuid 7e0ca608-d450-433c-bce8-416bcb315f3e)
+  )
+  (junction (at 171.45 68.58) (diameter 0) (color 0 0 0 0)
+    (uuid 8680431a-db8f-407b-a557-0fd71b703339)
+  )
+  (junction (at 171.45 86.36) (diameter 0) (color 0 0 0 0)
+    (uuid 8f38d044-8aec-49fa-86e7-decd3da974df)
+  )
+  (junction (at 128.27 96.52) (diameter 0) (color 0 0 0 0)
+    (uuid 91a0045e-c2a2-4c78-b456-15ba21618875)
+  )
+  (junction (at 161.29 50.8) (diameter 0) (color 0 0 0 0)
+    (uuid 921f6dfc-ed26-41b8-9302-3e1f318971a4)
+  )
+  (junction (at 161.29 113.03) (diameter 0) (color 0 0 0 0)
+    (uuid 94f931f1-fab6-4347-8d1d-f486590d9299)
+  )
+  (junction (at 128.27 88.9) (diameter 0) (color 0 0 0 0)
+    (uuid 956159ce-f0b2-43d1-b41e-75908ee27c77)
+  )
+  (junction (at 128.27 83.82) (diameter 0) (color 0 0 0 0)
+    (uuid 98142ea0-a08d-4f0d-8860-8f3441b5f485)
+  )
+  (junction (at 171.45 95.25) (diameter 0) (color 0 0 0 0)
+    (uuid 98b5385a-eb60-4a8a-ab79-d148bd524b29)
+  )
+  (junction (at 161.29 59.69) (diameter 0) (color 0 0 0 0)
+    (uuid a1898923-901f-44c7-8699-0b7bf5b94073)
+  )
+  (junction (at 161.29 33.02) (diameter 0) (color 0 0 0 0)
+    (uuid a3190eda-c1ce-4234-b7b2-6c6cd4b418b1)
+  )
+  (junction (at 171.45 33.02) (diameter 0) (color 0 0 0 0)
+    (uuid b160f968-251a-414b-8cd8-c1d8d60786c4)
+  )
+  (junction (at 128.27 76.2) (diameter 0) (color 0 0 0 0)
+    (uuid b2f795bb-130e-4f48-b335-64a59bdedae2)
+  )
+  (junction (at 171.45 41.91) (diameter 0) (color 0 0 0 0)
+    (uuid b4a50619-6424-4ff5-ae27-cfbcc027deb6)
+  )
+  (junction (at 171.45 77.47) (diameter 0) (color 0 0 0 0)
+    (uuid b7604c6e-d83f-48bd-9d86-2e69be971423)
+  )
+  (junction (at 171.45 59.69) (diameter 0) (color 0 0 0 0)
+    (uuid c6487c11-acd7-4319-b2c4-c10737b2be97)
+  )
+  (junction (at 171.45 104.14) (diameter 0) (color 0 0 0 0)
+    (uuid cb4a61c3-f162-4ea0-ab0c-6f38f2fee155)
+  )
+  (junction (at 161.29 95.25) (diameter 0) (color 0 0 0 0)
+    (uuid ce423fba-684f-4cd2-bd57-a0eecbfc1e12)
+  )
+  (junction (at 128.27 91.44) (diameter 0) (color 0 0 0 0)
+    (uuid d9605728-d49c-44a5-a228-67fb4faf75fe)
+  )
+  (junction (at 161.29 68.58) (diameter 0) (color 0 0 0 0)
+    (uuid e339ac59-f213-415b-9305-5fde2d716ac4)
+  )
+  (junction (at 143.51 78.74) (diameter 0) (color 0 0 0 0)
+    (uuid e7b4d916-a8db-4781-a338-a41f970b3305)
+  )
+  (junction (at 143.51 88.9) (diameter 0) (color 0 0 0 0)
+    (uuid f2609d96-0807-44d2-baaa-8e18d9fc19b9)
+  )
+  (junction (at 161.29 104.14) (diameter 0) (color 0 0 0 0)
+    (uuid f7b341c5-20a7-4839-8fb8-6db1b1a7c1d1)
+  )
+  (junction (at 143.51 93.98) (diameter 0) (color 0 0 0 0)
+    (uuid fa9c9f56-13ab-4357-906c-30bcbcd6c16c)
+  )
+
+  (no_connect (at 182.88 40.64) (uuid 273b5e32-8d83-4df5-bb6e-6e6d16ec387c))
+
+  (wire (pts (xy 128.27 96.52) (xy 128.27 99.06))
+    (stroke (width 0) (type default))
+    (uuid 04567861-19b7-4292-b58a-0070e1d8b839)
+  )
+  (wire (pts (xy 161.29 41.91) (xy 161.29 50.8))
+    (stroke (width 0) (type default))
+    (uuid 0fa9489e-89bb-4864-b6f3-5b24caefa9fe)
+  )
+  (wire (pts (xy 143.51 81.28) (xy 143.51 78.74))
+    (stroke (width 0) (type default))
+    (uuid 1232e6e4-07c6-4ad7-a107-ab316eabb1b9)
+  )
+  (wire (pts (xy 143.51 83.82) (xy 143.51 81.28))
+    (stroke (width 0) (type default))
+    (uuid 18db72b8-7e92-443b-88bc-18525e466607)
+  )
+  (wire (pts (xy 143.51 91.44) (xy 143.51 88.9))
+    (stroke (width 0) (type default))
+    (uuid 1badec9b-c07d-4d1e-881a-2e1c74f5edf3)
+  )
+  (wire (pts (xy 171.45 121.92) (xy 171.45 130.81))
+    (stroke (width 0) (type default))
+    (uuid 1da78651-a2db-4c7a-9755-901532684d6d)
+  )
+  (wire (pts (xy 128.27 91.44) (xy 128.27 93.98))
+    (stroke (width 0) (type default))
+    (uuid 21061841-c3cf-417d-8c2e-02482978db42)
+  )
+  (wire (pts (xy 161.29 68.58) (xy 161.29 77.47))
+    (stroke (width 0) (type default))
+    (uuid 2e70b8bd-6196-47dc-b5a4-6cfd90378088)
+  )
+  (wire (pts (xy 143.51 76.2) (xy 143.51 78.74))
+    (stroke (width 0) (type default))
+    (uuid 3234e24e-60bb-445e-9bbd-735b27dcfe91)
+  )
+  (wire (pts (xy 161.29 77.47) (xy 161.29 86.36))
+    (stroke (width 0) (type default))
+    (uuid 46606901-a812-4f2f-a8c4-633c00a7d70b)
+  )
+  (wire (pts (xy 171.45 68.58) (xy 171.45 77.47))
+    (stroke (width 0) (type default))
+    (uuid 5f42ab7c-0f4c-45c5-8e31-a13fd4cde930)
+  )
+  (wire (pts (xy 128.27 83.82) (xy 128.27 86.36))
+    (stroke (width 0) (type default))
+    (uuid 614469fb-c42f-4e9d-b2fc-c44b5e2657c0)
+  )
+  (wire (pts (xy 171.45 77.47) (xy 171.45 86.36))
+    (stroke (width 0) (type default))
+    (uuid 6381bd1b-029c-4601-9f0e-4d8f68f3dad4)
+  )
+  (wire (pts (xy 143.51 88.9) (xy 143.51 86.36))
+    (stroke (width 0) (type default))
+    (uuid 668c1b97-b2df-49e5-b15d-4f667e6a41ed)
+  )
+  (wire (pts (xy 171.45 113.03) (xy 171.45 121.92))
+    (stroke (width 0) (type default))
+    (uuid 66f8faa2-cb1e-413a-9a52-c83559a04fcb)
+  )
+  (wire (pts (xy 161.29 59.69) (xy 161.29 68.58))
+    (stroke (width 0) (type default))
+    (uuid 7166c10c-777b-4f61-9c00-4cb5019ab3b4)
+  )
+  (wire (pts (xy 171.45 95.25) (xy 171.45 104.14))
+    (stroke (width 0) (type default))
+    (uuid 7627de63-212f-4458-9cd4-d19342a58b81)
+  )
+  (wire (pts (xy 128.27 68.58) (xy 128.27 76.2))
+    (stroke (width 0) (type default))
+    (uuid 7c8403d0-70e1-4e4b-8449-c36714bc218d)
+  )
+  (wire (pts (xy 171.45 33.02) (xy 171.45 41.91))
+    (stroke (width 0) (type default))
+    (uuid 7f812bd1-481c-4f64-a1e3-813a461191ed)
+  )
+  (wire (pts (xy 128.27 81.28) (xy 128.27 83.82))
+    (stroke (width 0) (type default))
+    (uuid 8098bebd-4e91-4809-82d4-54666c8a818e)
+  )
+  (wire (pts (xy 161.29 33.02) (xy 161.29 41.91))
+    (stroke (width 0) (type default))
+    (uuid 9076ebf4-7847-40d3-b89e-9b6d858a7489)
+  )
+  (wire (pts (xy 171.45 41.91) (xy 171.45 50.8))
+    (stroke (width 0) (type default))
+    (uuid 93dbd904-fac5-41f4-9ab9-47e0b4508bd3)
+  )
+  (wire (pts (xy 128.27 76.2) (xy 128.27 78.74))
+    (stroke (width 0) (type default))
+    (uuid 971e2c1c-21ed-4e2b-883f-11dad102ee7c)
+  )
+  (wire (pts (xy 128.27 88.9) (xy 128.27 91.44))
+    (stroke (width 0) (type default))
+    (uuid a286d90a-448f-4414-aeef-a0673a53c8d7)
+  )
+  (wire (pts (xy 161.29 121.92) (xy 161.29 130.81))
+    (stroke (width 0) (type default))
+    (uuid a9008793-1e1a-49fe-b307-65e6141868ac)
+  )
+  (wire (pts (xy 161.29 95.25) (xy 161.29 104.14))
+    (stroke (width 0) (type default))
+    (uuid ad169b2e-f72c-4e02-8074-5a8995ab60cd)
+  )
+  (wire (pts (xy 143.51 96.52) (xy 143.51 99.06))
+    (stroke (width 0) (type default))
+    (uuid b0f34656-b48a-4350-b8fd-c7f8837db84b)
+  )
+  (wire (pts (xy 179.07 33.02) (xy 182.88 33.02))
+    (stroke (width 0) (type default))
+    (uuid ba064260-2d4c-4d67-994f-ace3ee2d42ed)
+  )
+  (wire (pts (xy 161.29 50.8) (xy 161.29 59.69))
+    (stroke (width 0) (type default))
+    (uuid c1e47a13-0911-4b8d-8b3f-826c181991f5)
+  )
+  (wire (pts (xy 143.51 91.44) (xy 143.51 93.98))
+    (stroke (width 0) (type default))
+    (uuid c496c5bc-619b-4e0b-a063-963af20d6012)
+  )
+  (wire (pts (xy 143.51 93.98) (xy 143.51 96.52))
+    (stroke (width 0) (type default))
+    (uuid c96cbc1e-6b5d-4f4c-b13e-57653075f007)
+  )
+  (wire (pts (xy 161.29 113.03) (xy 161.29 121.92))
+    (stroke (width 0) (type default))
+    (uuid d0040e1b-c2e7-4df3-9e5c-61afa662bd73)
+  )
+  (wire (pts (xy 171.45 104.14) (xy 171.45 113.03))
+    (stroke (width 0) (type default))
+    (uuid d0192731-fde3-48d5-aba3-fcc1d2405993)
+  )
+  (wire (pts (xy 161.29 86.36) (xy 161.29 95.25))
+    (stroke (width 0) (type default))
+    (uuid d08c040d-8795-4f03-9b42-0b929669c1f9)
+  )
+  (wire (pts (xy 171.45 50.8) (xy 171.45 59.69))
+    (stroke (width 0) (type default))
+    (uuid dddbdad6-b28a-4b5a-9144-f62baec6a4a3)
+  )
+  (wire (pts (xy 171.45 59.69) (xy 171.45 68.58))
+    (stroke (width 0) (type default))
+    (uuid de345458-2ad4-4047-ac59-50fcc3af9e31)
+  )
+  (wire (pts (xy 128.27 78.74) (xy 128.27 81.28))
+    (stroke (width 0) (type default))
+    (uuid df16fe0d-e06d-45c7-9b46-8eb6ba8fd0ef)
+  )
+  (wire (pts (xy 161.29 104.14) (xy 161.29 113.03))
+    (stroke (width 0) (type default))
+    (uuid e06236ea-f406-464b-824d-1bf8de902cd1)
+  )
+  (wire (pts (xy 182.88 33.02) (xy 186.69 33.02))
+    (stroke (width 0) (type default))
+    (uuid e2e46532-7845-4202-9fcb-9c1c8eb8303e)
+  )
+  (wire (pts (xy 171.45 86.36) (xy 171.45 95.25))
+    (stroke (width 0) (type default))
+    (uuid e5768004-3a1b-4a23-9ba1-6a0e9cbac9ec)
+  )
+  (wire (pts (xy 143.51 86.36) (xy 143.51 83.82))
+    (stroke (width 0) (type default))
+    (uuid f6a7b1ca-22e5-4b62-af2d-094acbb65e27)
+  )
+  (wire (pts (xy 128.27 86.36) (xy 128.27 88.9))
+    (stroke (width 0) (type default))
+    (uuid f975161b-e5fd-41b3-a0dc-560f8add43d0)
+  )
+  (wire (pts (xy 128.27 93.98) (xy 128.27 96.52))
+    (stroke (width 0) (type default))
+    (uuid fbd00cf0-a7b7-47be-8d62-84563ee7b089)
+  )
+
+  (global_label "Data_Line_sensor" (shape input) (at 186.69 33.02 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 3caf081b-4115-41ba-aab3-bea9bc963758)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 206.0036 33.02 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "Data_Line_sensor" (shape input) (at 119.38 110.49 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid d83b1216-07ff-4a91-95e1-b086e3871af6)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 100.0664 110.49 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
+
+  (symbol (lib_id "Device:R_Potentiometer_Trim_US") (at 182.88 36.83 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 0ad860e1-0559-4002-8544-8f16f0a79bec)
+    (property "Reference" "RV1" (at 184.15 36.83 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "R_Potentiometer_Trim_US" (at 185.42 38.1 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+    (property "Footprint" "Potentiometer_SMD:Potentiometer_Vishay_TS53YJ_Vertical" (at 182.88 36.83 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 182.88 36.83 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5065f7f3-9c00-4e03-8d28-1ad4faf08d41))
+    (pin "2" (uuid bc81ea69-64cd-489a-8763-3c95727aea98))
+    (pin "3" (uuid 71f6ecbb-35e4-45b1-9b64-71b3693f7082))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "ジャイロ"
+        (path "/59f10f94-9e1b-4853-8cf9-78976fb5e616"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "micro core"
+        (path "/88e6b087-7521-46b8-b1bf-34dede3cf241"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "teency"
+        (path "/ab573fa5-1f26-4558-b7ff-1a54dbe6062c"
+          (reference "Line1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "RV1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "RV1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 53.34 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 0f70e049-2f85-477d-b42b-566523634110)
+    (property "Reference" "Q3" (at 164.3507 48.26 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 48.26 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 48.26 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 8644bc2f-d117-4ad8-afe9-ca3c65efdb34))
+    (pin "2" (uuid f7acec7b-bb06-4093-8101-0c72c3407916))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 97.79 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 11b1e80c-7af6-4013-b643-be8a01b5f9a4)
+    (property "Reference" "Q4" (at 164.3507 92.71 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 92.71 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 92.71 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 97.79 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 71fa2ed3-0c6a-4bee-ac4d-5c038deedf3e))
+    (pin "2" (uuid d9394ee0-4391-4250-8b32-09f9a36b4209))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q8") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 86.36 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 2a1caa18-3a6e-4767-8384-56abd4c1c563)
+    (property "Reference" "D1" (at 140.97 78.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "LED" (at 141.2875 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid d6e7ed9f-02d1-46b7-b6ec-759f057309bf))
+    (pin "1" (uuid 0191f3c2-d157-4c0c-b533-a1a27fe0ca89))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D5") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 88.9 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 32894f46-9f5a-4514-95d3-4ab56a74c995)
+    (property "Reference" "D2" (at 141.2875 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 2ba851d3-7d82-46f2-a439-05c614220862))
+    (pin "1" (uuid 4ed724b2-eae9-40aa-a556-1aa5c349d0e6))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D6") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 124.46 107.95 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3610fc2e-98e0-45d6-8cfd-da27d7f01957)
+    (property "Reference" "J1" (at 125.73 107.95 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Conn_01x04_Socket" (at 125.73 110.49 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" (at 124.46 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 124.46 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "4" (uuid 8a73953f-031a-4d0e-bd9a-8ca5fd6f5bb8))
+    (pin "3" (uuid 756984cd-12a6-48e2-9e65-c5c1cd53c442))
+    (pin "1" (uuid 14fba9cc-f306-4273-aa55-73a3115f2bfa))
+    (pin "2" (uuid fa1c2ace-b89f-4865-9759-3b40a10f165b))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "J1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "J1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "J6") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "J1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 179.07 36.83 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 38461edd-b809-4ecf-b2f9-a19c02b5a96d)
+    (property "Reference" "#PWR025" (at 179.07 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 179.07 40.64 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 179.07 36.83 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 179.07 36.83 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 938958b9-637e-4165-bf72-0e475a7156d1))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR025") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR07") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR04") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR07") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR02") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 119.38 105.41 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 39005bac-abc8-4c46-bc14-e61cc984b06c)
+    (property "Reference" "#PWR019" (at 113.03 105.41 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 115.57 105.41 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 119.38 105.41 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 119.38 105.41 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5c7c1584-71ce-43a9-b2c8-11ac1b163bb9))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR019") (unit 1)
+        )
+      )
+      (project "line small"
+        (path "/302064ab-da72-4921-9b07-c56a74d13f60"
+          (reference "#PWR07") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR033") (unit 1)
+        )
+      )
+      (project "Line sensor"
+        (path "/cc30181a-b1d8-44cf-a68f-69cbc037e250"
+          (reference "#PWR013") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR08") (unit 1)
+        )
+      )
+      (project "Lne_sensor_main"
+        (path "/e7fdd4fa-61f8-4de7-9f81-7fbcedfe94ac"
+          (reference "#PWR074") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 78.74 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 39d1970b-12aa-41dd-a951-ed0429069739)
+    (property "Reference" "R2" (at 132.08 72.39 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 74.93 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 80.518 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 21f63a5e-9bcf-4a10-bbd8-5d807d088761))
+    (pin "1" (uuid f90c85bf-392f-4898-998f-863bfa326c92))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 106.68 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 3a1606c0-a47a-4c26-9f57-62c1f9ab4391)
+    (property "Reference" "Q1" (at 164.3507 101.6 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 101.6 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 101.6 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 106.68 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 1ddddb45-6aeb-41e1-85f4-aff12ba2c58b))
+    (pin "2" (uuid 6feed47c-7e94-4485-a6e7-29a5c9c98bf5))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q9") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 78.74 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3ab1e5fa-e439-46b2-a34e-6fa51001ed97)
+    (property "Reference" "D2" (at 141.2875 71.12 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 73.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid cf45f833-ce1a-4047-a51a-171c59fee23e))
+    (pin "1" (uuid 9e44a986-1dbc-4434-89d9-7a27ffdee258))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 44.45 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 3faf6d2e-e8b3-406d-8ddc-437ae986a7c1)
+    (property "Reference" "Q2" (at 164.3507 39.37 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 39.37 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 39.37 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 44.45 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ffaaf3d1-a0ce-4c18-8db6-481d5b9a44c1))
+    (pin "2" (uuid 5b8b3627-ea9e-44ac-9aa5-b45532d680af))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 62.23 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 3feb9999-4ffa-44bb-bba7-5a117a7416f2)
+    (property "Reference" "Q4" (at 164.3507 57.15 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 57.15 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 57.15 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 62.23 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4b67eeaf-935d-4bce-a4bd-6a8c39cd9ca2))
+    (pin "2" (uuid 8012adce-e17e-4993-9a1e-7484246555e3))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 161.29 33.02 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5779937c-5387-4b26-b6f2-12fc8502ade7)
+    (property "Reference" "#PWR024" (at 165.1 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 156.21 33.02 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 161.29 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 161.29 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 74da8c3a-444e-4fac-8632-7df332336e62))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR024") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR06") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR03") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR06") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 76.2 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 5915ff98-de8b-439c-b0c5-1ae0bb6ff1de)
+    (property "Reference" "D1" (at 140.97 68.58 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "LED" (at 141.2875 71.12 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 9def2382-ff9c-4073-9690-e12eb51d2c6d))
+    (pin "1" (uuid 8030ce45-ee9f-4d7c-a5f6-c908c6d0f456))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 88.9 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5a48cc0d-9d74-4753-aa1a-8f34ba6f8a83)
+    (property "Reference" "R2" (at 132.08 82.55 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 85.09 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 90.678 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid e062580d-7a1a-471d-8218-c58dfc753aaa))
+    (pin "1" (uuid 80f6b1bc-37d8-4663-85df-7b81319553a7))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R7") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 99.06 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5b6a086b-6f44-4128-b726-925ade0df7a9)
+    (property "Reference" "R2" (at 132.08 92.71 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 95.25 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 100.838 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 322fef16-79da-48c1-9c9b-22b05bd1006b))
+    (pin "1" (uuid 47da6a57-b725-4389-bccb-2df350cf0ee9))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R11") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 83.82 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 62289584-ebd7-45f8-86cd-2bcc3e492e53)
+    (property "Reference" "R2" (at 132.08 77.47 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 80.01 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 85.598 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 84d800eb-2667-4d52-a330-dea200663c14))
+    (pin "1" (uuid 18caa52c-f736-44a0-b6a8-34b18a3d7ded))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R5") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 80.01 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 644e9231-6df9-4f77-8aa7-86a942966958)
+    (property "Reference" "Q2" (at 164.3507 74.93 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 74.93 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 74.93 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4d93d4ca-7c81-48aa-ae55-d9934e0479cd))
+    (pin "2" (uuid 8b98d2df-fe38-4bc5-a6bc-fad9711f4888))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q6") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 86.36 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 66008671-b1cc-4e6d-a1f9-f80d523d9aeb)
+    (property "Reference" "R1" (at 132.08 80.01 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 82.55 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 88.138 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid c4536c27-0410-43b1-8e06-fe575afdef18))
+    (pin "1" (uuid f4b3cee7-f229-41d2-ab09-6ca288aa5404))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R6") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R7") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 96.52 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 68a8b412-d906-4450-a4ab-cadbbc74422d)
+    (property "Reference" "R2" (at 132.08 90.17 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 92.71 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 98.298 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 96.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 0fa255b3-2bb4-4c5a-97e4-6503de6bbcec))
+    (pin "1" (uuid d3087453-bb9b-4945-b736-10db766a159b))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R10") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 93.98 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 71e7375c-742c-49d2-b9b2-6070d57c2352)
+    (property "Reference" "D2" (at 141.2875 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 482292c1-5a8e-4a2e-93d6-0618238bafea))
+    (pin "1" (uuid ec0d4275-e054-47cb-9459-cc9a3a6f52ba))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D8") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 143.51 99.06 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 7d637cd8-294c-42b3-a8b0-c7da38f6fb03)
+    (property "Reference" "#PWR023" (at 149.86 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 147.32 99.06 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (at 143.51 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 143.51 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid aac56d61-3e09-4972-bf9c-f6526f7e09d2))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR023") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR02") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR05") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR011") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 124.46 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 8094339d-1965-48d1-9c17-41c8e1d1a5fc)
+    (property "Reference" "Q4" (at 164.3507 119.38 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 119.38 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b7fbe63a-2a8d-449d-8d69-e9166b9e0785))
+    (pin "2" (uuid 23d115ee-4e8f-4dc3-b8e9-0c2e45d2a6e9))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q13") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q4") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 115.57 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 8d30c9ae-d3de-438f-8c19-358a8e03cd96)
+    (property "Reference" "Q2" (at 164.3507 110.49 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 110.49 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 110.49 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d7f5df82-61e4-489c-8284-157edff7073d))
+    (pin "2" (uuid 209ee9ba-684f-45ae-b5bf-8850a6d63dc3))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q10") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 76.2 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 952c6f1f-2db6-42fe-88ec-3beeaf81e0aa)
+    (property "Reference" "R1" (at 132.08 69.85 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 72.39 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 77.978 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 488a8446-daea-49b6-a132-6194052c7b23))
+    (pin "1" (uuid 16aa6773-47c9-4096-92b8-0a1d814ad0bf))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R7") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 35.56 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid a359cc74-fba7-4ecd-ac5f-19b23cac2f76)
+    (property "Reference" "Q1" (at 164.3507 30.48 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 30.48 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 30.48 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 35.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 1e368391-f585-4a1b-b8a9-2762e3d25d3b))
+    (pin "2" (uuid 66b7a550-dbb7-4e63-a586-c4e2781c92dd))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 99.06 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid b506e9ac-688b-4e37-8c14-4a4898678843)
+    (property "Reference" "D2" (at 141.2875 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 78d64020-3bc2-4358-a461-c71d6a613abd))
+    (pin "1" (uuid dd1b9556-8c29-4e8a-a2d9-6461dc74bcc7))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D10") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 71.12 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid b6b14c2f-c439-4681-bbb5-43f67d4294e5)
+    (property "Reference" "Q1" (at 164.3507 66.04 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 66.04 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 66.04 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 71.12 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 11e83005-054b-4b8a-90ca-c17cb126597a))
+    (pin "2" (uuid 7bd58ee9-aab1-4232-9ba7-3693798b6a96))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q5") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 91.44 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid b8859372-2c7e-4b29-b0b2-dc1f9a74ccae)
+    (property "Reference" "D2" (at 141.2875 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid ad749b4a-ed14-4b4a-88bc-0ab664ed9488))
+    (pin "1" (uuid b2eb3a2c-ef11-4c24-8b15-daa075af7f74))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D7") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 91.44 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bd24f64e-9cc3-4e9b-b044-37e9542ee3bb)
+    (property "Reference" "R2" (at 132.08 85.09 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 87.63 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 93.218 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid a96e039f-d62a-4937-87a1-dfab9ef5f88f))
+    (pin "1" (uuid 50f0bc28-ca09-42fc-a4db-9419f5d7a7f9))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R8") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 93.98 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid c5997c0e-0b62-4645-850b-53291069e451)
+    (property "Reference" "R2" (at 132.08 87.63 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 90.17 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 95.758 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 93.98 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid e3ca4495-feda-490d-8b8a-3d41c9f056dc))
+    (pin "1" (uuid 79d4ea1b-93ec-4a67-8a31-7e4546f3a474))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R9") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R8") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 88.9 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid c6d74d91-83ea-4a45-b8f6-fc470cf28ddf)
+    (property "Reference" "Q3" (at 164.3507 83.82 90)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 83.82 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid c16e8ea4-ff29-4333-b3c2-c485c24a4678))
+    (pin "2" (uuid ade6c105-f195-4282-a503-e59ede16ee82))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q7") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q3") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:Q_Photo_NPN") (at 166.37 133.35 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid ce1d8259-f0eb-463c-939e-9f4c938a5599)
+    (property "Reference" "Q1" (at 164.3507 128.27 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "Q_Photo_NPN" (at 166.8907 128.27 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 163.83 128.27 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 166.37 133.35 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 44dd11a2-38b3-4647-83e1-19f16246dd37))
+    (pin "2" (uuid 378033b0-aa11-4f37-9425-ff443adb6244))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "Q14") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "Q1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "Q1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 83.82 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid d8930046-71c1-4f8a-86c2-a9f32c9d86be)
+    (property "Reference" "D2" (at 141.2875 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid e64f076e-6e86-41d4-a5d7-7153df4d28b7))
+    (pin "1" (uuid 7e9555a8-59d0-4622-9b8b-4baeb02ef77a))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 175.26 33.02 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid df33f09b-bcff-4fc6-8c48-9c1176248214)
+    (property "Reference" "R5" (at 175.26 26.67 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "R" (at 175.26 29.21 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 175.26 34.798 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 175.26 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 0afee6bc-ece5-492b-b111-8bd061948ab5))
+    (pin "1" (uuid 46cc7454-efd2-4f90-9c03-af23f68c8d52))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R5") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R3") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R5") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+5V") (at 128.27 68.58 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid e3d95bb1-cac5-499a-b48e-d658bdb37649)
+    (property "Reference" "#PWR022" (at 124.46 68.58 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 132.08 68.58 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 128.27 68.58 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 128.27 68.58 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 82f30fc0-24b2-42fb-9d20-ad7f6bcea5ce))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR022") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR04") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR04") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR07") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+5V") (at 119.38 113.03 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ec1b8c10-204b-4ef5-8e27-954b2b46f14c)
+    (property "Reference" "#PWR021" (at 123.19 113.03 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 115.57 113.03 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 119.38 113.03 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 119.38 113.03 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 35d9bb7e-8806-474f-9be6-726ab164072d))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR021") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR03") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR032") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR03") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 132.08 81.28 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ef011a21-4870-4922-97a7-3130489aa602)
+    (property "Reference" "R1" (at 132.08 74.93 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "R" (at 132.08 77.47 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 132.08 83.058 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 132.08 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 731238b5-607c-4c09-b6b0-83c80be1d346))
+    (pin "1" (uuid 97e8ea18-bc61-4ee3-b45d-14888b757f7d))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "R4") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "R7") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 96.52 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid f5f5a5dd-89bb-4293-ba09-25e520cc4e78)
+    (property "Reference" "D2" (at 141.2875 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "LED" (at 141.2875 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 96.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 96.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid d1d16d4e-73d9-4908-a931-b3b1997941b1))
+    (pin "1" (uuid 46b92296-9424-4f5b-85a7-f82f48395e13))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D9") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D2") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 119.38 107.95 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid fc94d243-239d-48c1-8344-8b78a5928029)
+    (property "Reference" "#PWR020" (at 123.19 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 115.57 107.95 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 119.38 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 119.38 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid bcbd77d1-57a9-4370-91e2-9313ce497771))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "#PWR020") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "#PWR02") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "#PWR034") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "#PWR02") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "#PWR09") (unit 1)
+        )
+      )
+      (project "Lne_sensor_main"
+        (path "/e7fdd4fa-61f8-4de7-9f81-7fbcedfe94ac"
+          (reference "#PWR071") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:LED") (at 139.7 81.28 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid fea84875-d9c7-48f8-9cd8-484f373c5fe7)
+    (property "Reference" "D1" (at 140.97 73.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "LED" (at 141.2875 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "LED_THT:LED_D3.0mm_Clear" (at 139.7 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 139.7 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid 23ecb1ee-228e-4734-abe3-36e9fc561a46))
+    (pin "1" (uuid 7463ad63-4e80-422d-8d04-3eb332f0aebc))
+    (instances
+      (project "Line_sensor_SMD_outside"
+        (path "/229118a9-43de-4dd2-84b0-be69e9ef06b0"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_side&back"
+        (path "/3426c485-fafc-4baa-b714-5cba6df01dfb"
+          (reference "D3") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototransistor"
+        (path "/5ae57ea8-5d12-4bec-9ac6-b3c6b29282f3"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_small"
+        (path "/e127bbd3-27df-40a1-ba55-8c1926ce564d"
+          (reference "D1") (unit 1)
+        )
+      )
+      (project "Line_sensor_phototranzistor"
+        (path "/e4167dcb-115a-4fec-bac2-6c9a99b0f9bb"
+          (reference "D1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
