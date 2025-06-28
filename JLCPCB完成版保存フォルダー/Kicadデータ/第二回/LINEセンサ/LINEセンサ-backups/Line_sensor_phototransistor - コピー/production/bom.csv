@@ -1,0 +1,9 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"D1, D10, D11, D12, D13, D14, D15, D16, D2, D3, D4, D5, D6, D7, D8, D9",LED_D3.0mm_Clear,16,LED,
+J1,JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,1,Conn_01x04_Socket,
+"J2, J3, J6",PinHeader_1x04_P2.54mm_Vertical,3,Conn_01x04_Socket,
+"Q1, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q2, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29, Q3, Q30, Q31, Q32, Q4, Q5, Q6, Q7, Q8, Q9",LED_D3.0mm_Clear,32,Q_Photo_NPN,
+"R1, R10, R11, R12, R13, R14, R15, R16, R17, R2, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R3, R30, R31, R32, R33, R34, R4, R5, R6, R7, R8, R9",0805,32,R,
+"RV1, RV10, RV11, RV12, RV13, RV14, RV15, RV16, RV2, RV3, RV4, RV5, RV6, RV7, RV8, RV9",Potentiometer_Vishay_TS53YJ_Vertical,16,R_Potentiometer_Trim_US,
+U1,SSOP-24_5.3x8.2mm_P0.65mm,1,CD74HC4067SM,
+U2,seeeduinoXIAO,1,Seeeduino_Xiao,
