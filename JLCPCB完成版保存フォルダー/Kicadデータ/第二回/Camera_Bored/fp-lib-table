@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ESP32mod")(type "KiCad")(uri "${KIPRJMOD}/ESP32mod")(options "")(descr ""))
+  (lib (name "Open_MV")(type "KiCad")(uri "${KIPRJMOD}/Open_MV")(options "")(descr ""))
+)
