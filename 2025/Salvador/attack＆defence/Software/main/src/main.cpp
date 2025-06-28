@@ -301,12 +301,12 @@ void defence()
       {
         if (line_bit > 0)
         {
-          Move_Deg(court_dir, 70);
+          Move_Deg(court_dir, 90);
         }
         else
         {
 
-          Move_Deg(180, 80);
+          Move_Deg(180, 90);
         }
       }
       else
@@ -315,7 +315,7 @@ void defence()
         {
           if (defence_goal_dis > 110)
           {
-            Move_Deg(court_dir, 70);
+            Move_Deg(court_dir, 90);
           }
           else
           {
@@ -325,7 +325,7 @@ void defence()
         else
         {
 
-          Move_Deg(defence_goal_dir, 40);
+          Move_Deg(defence_goal_dir, 90);
         }
       }
     }
@@ -384,7 +384,7 @@ void defence()
               { //
                 RULU.start();
                 RULU.tick();
-                if (rulu_time >= 2000)
+                if (rulu_time >= 4000)
                 {
                   rulu_time = 0;
                   RULU.reset();
@@ -443,11 +443,11 @@ void defence()
             else
             {
               // mass1 = line_dir_stop(mass1, mass2);
-              if (goal_line_change > 5)
+              if (goal_line_change > 7)
               {
                 Move_Deg(mass2, move_speed + 10);
               }
-              else if (goal_line_change > -5)
+              else if (goal_line_change > -7)
               {
                 Move_Deg(0, 0);
               }
@@ -530,11 +530,11 @@ void defence()
           {
             if (IR_dir == 500)
             {
-              if (goal_line_change > 5)
+              if (goal_line_change > 7)
               {
                 Move_Deg(mass2, move_speed);
               }
-              else if (goal_line_change > -5)
+              else if (goal_line_change > -7)
               {
                 Move_Deg(0, 0);
               }
@@ -707,7 +707,7 @@ void defence()
       RULU.tick();
     }
     rulu_time = RULU.get_value();
-    if (rulu_time >= 1500)
+    if (rulu_time >= 800)
     {
       com_mode = 0;
       RULU.reset();
@@ -939,10 +939,10 @@ void loop()
   Serial.print("   ");
   Serial.print("\t");
 
-  // Serial.print("ball_dis ");
-  // Serial.print(ball_dis);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("IR_dis ");
+  Serial.print(IR_dis);
+  Serial.print("   ");
+  Serial.print("\t");
 
   // Serial.print("line_bit ");
   // Serial.print(line_bit);
