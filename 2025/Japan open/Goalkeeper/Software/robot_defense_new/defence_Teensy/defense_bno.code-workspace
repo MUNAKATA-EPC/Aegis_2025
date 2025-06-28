@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../defense_bno"
+		},
+		{
+			"name": "defence_Teensy",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
