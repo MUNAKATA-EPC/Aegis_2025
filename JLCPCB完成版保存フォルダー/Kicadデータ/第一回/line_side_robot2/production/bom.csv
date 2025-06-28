@@ -1,7 +1,0 @@
-﻿Designator,Footprint,Quantity,Value,LCSC Part #
-"D1, D2, D3, D4_2, D4, D5, D6",LED_WS2812B-2020_PLCC4_2.0x2.0mm,7,NeoPixel_THT,
-J1,PinHeader_1x04_P2.54mm_Horizontal,1,Conn_01x04_Pin,
-J2,PinHeader_1x01_P2.54mm_Vertical,1,Conn_01x01_Pin,
-"Q1, Q10, Q11, Q12, Q13, Q14, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9",LED_D3.0mm_Clear,14,Q_Photo_NPN,
-R1,2010,1,1K,
-RV1,Potentiometer_Vishay_TS53YJ_Vertical,1,R_Potentiometer_Trim_US,

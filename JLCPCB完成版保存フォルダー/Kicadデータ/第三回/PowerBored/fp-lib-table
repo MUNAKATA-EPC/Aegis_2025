@@ -1,9 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "XL6009")(type "KiCad")(uri "${KIPRJMOD}/XL6009")(options "")(descr ""))
-  (lib (name "OKL-T_6-W12N-C")(type "KiCad")(uri "${KIPRJMOD}/OKL-T_6-W12N-C")(options "")(descr ""))
-  (lib (name "K15A20D")(type "KiCad")(uri "${KIPRJMOD}/K15A20D")(options "")(descr ""))
-  (lib (name "switch")(type "KiCad")(uri "${KIPRJMOD}/switch")(options "")(descr ""))
-  (lib (name "Fuse_Socket")(type "KiCad")(uri "${KIPRJMOD}/Fuse_Socket")(options "")(descr ""))
-  (lib (name "Voltage_Counter")(type "KiCad")(uri "${KIPRJMOD}/Voltage_Counter")(options "")(descr ""))
-)

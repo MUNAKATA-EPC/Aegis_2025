@@ -1,9 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "Teensy_Breakout")(type "KiCad")(uri "C:/部活/GitHub/SCHOOL_FESTIVAL/2024/自立無線/ハードウェア/KiCadData/KiCad_Library/Teensy_Breakout")(options "")(descr ""))
-  (lib (name "可変抵抗")(type "KiCad")(uri "C:/部活/GitHub/SCHOOL_FESTIVAL/2024/自立無線/ハードウェア/KiCadData/KiCad_Library/可変抵抗.pretty")(options "")(descr ""))
-  (lib (name "KiCad_Library")(type "KiCad")(uri "C:/部活/GitHub/Artemis_2024/Project_OHKA/Hardware/KiCad_Library")(options "")(descr ""))
-  (lib (name "KiCad")(type "KiCad")(uri "C:/部活/GitHub/Artemis_2024/Project_OHKA/Hardware/KiCad")(options "")(descr ""))
-  (lib (name "pcb_library")(type "KiCad")(uri "C:/部活/GitHub/soccer-communication-module/pcb_library")(options "")(descr ""))
-  (lib (name "comm")(type "KiCad")(uri "C:/部活/GitHub/Artemis_2024/CommonData/KiCad_Library/comm")(options "")(descr ""))
-)

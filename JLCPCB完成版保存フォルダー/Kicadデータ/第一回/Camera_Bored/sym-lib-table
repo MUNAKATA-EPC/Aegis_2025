@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "open_mv")(type "KiCad")(uri "${KIPRJMOD}/Open_MV/open_mv.kicad_sym")(options "")(descr ""))
-)

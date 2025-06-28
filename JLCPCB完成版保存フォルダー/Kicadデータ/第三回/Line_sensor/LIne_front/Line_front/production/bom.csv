@@ -1,6 +1,0 @@
-﻿Designator,Footprint,Quantity,Value,LCSC Part #
-"D1, D2_2, D2, D3, D4, D7",LED_D3.0mm_Clear,6,LED,
-J3,PinHeader_1x04_P2.54mm_Vertical,1,Conn_01x04_Socket,
-"Q1, Q15, Q16, Q17, Q3, Q4",LED_D3.0mm_Clear,6,Q_Photo_NPN,
-"R1_2, R1, R2, R4, R5, R6, R7",0805,7,R,
-RV2,Potentiometer_Vishay_TS53YJ_Vertical,1,R_Potentiometer_Trim_US,
