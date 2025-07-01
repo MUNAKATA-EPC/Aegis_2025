@@ -301,12 +301,12 @@ void defence()
       {
         if (line_bit > 0)
         {
-          Move_Deg(court_dir, 90);
+          Move_Deg(court_dir, 80);
         }
         else
         {
 
-          Move_Deg(180, 90);
+          Move_Deg(180, 80);
         }
       }
       else
@@ -315,7 +315,7 @@ void defence()
         {
           if (defence_goal_dis > 110)
           {
-            Move_Deg(court_dir, 90);
+            Move_Deg(court_dir, 80);
           }
           else
           {
@@ -325,7 +325,7 @@ void defence()
         else
         {
 
-          Move_Deg(defence_goal_dir, 90);
+          Move_Deg(defence_goal_dir, 80);
         }
       }
     }
@@ -384,7 +384,7 @@ void defence()
               { //
                 RULU.start();
                 RULU.tick();
-                if (rulu_time >= 4000)
+                if (rulu_time >= 2000)
                 {
                   rulu_time = 0;
                   RULU.reset();
@@ -658,7 +658,7 @@ void defence()
           }
           else
           {
-            if (abs(IR_dir) > 120)
+            if (abs(IR_dir) > 100)
             {
               Move_Deg(0, 0);
             }
@@ -678,15 +678,7 @@ void defence()
       }
       else
       {
-        // if(abs(court_dir - goal_line_change) < 25){
-
-        //   Move_Deg(goal_line_change, 40);
-
-        // }else{
-        //   Move_Deg(goal_dir, 40);
-
-        // }
-        Move_Deg(go_line, 40);
+        Move_Deg(go_line, 60);
       }
     }
   }
@@ -707,7 +699,7 @@ void defence()
       RULU.tick();
     }
     rulu_time = RULU.get_value();
-    if (rulu_time >= 800)
+    if (rulu_time >= 500)
     {
       com_mode = 0;
       RULU.reset();
@@ -931,6 +923,24 @@ void loop()
   }
   else
   {
+    if (mode_change == 1)
+    {
+      KICK_TEST.start();
+      KICK_TEST.tick();
+      kick_test_time = KICK_TEST.get_value();
+      if (kick_test_time >= 100 && kick_test_time <= 300)
+      {
+        digitalWrite(TEST, LOW);
+        digitalWrite(kicker, HIGH);
+        delay(30);
+        digitalWrite(kicker, LOW);
+        KICK_TEST.reset();
+        kick_test_time = KICK_TEST.get_value();
+        KICK_fin = false;
+        mode_change = 0;
+      }
+    }
+
     move(0, 0, 0, 0);
   }
 
@@ -964,9 +974,9 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  // Serial.print("line_change ");
-  // Serial.print(goal_line_change);
-  // Serial.print("   ");
+  Serial.print("line_change ");
+  Serial.print(goal_line_change);
+  Serial.print("   ");
 
   // Serial.print("yellow_dis ");
   // Serial.print(yellow_dis);
@@ -983,14 +993,14 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  Serial.print("camera_change ");
-  Serial.print(camera_change);
-  Serial.print("   ");
-  Serial.print("\t");
+  // Serial.print("camera_change ");
+  // Serial.print(camera_change);
+  // Serial.print("   ");
+  // Serial.print("\t");
 
-  Serial.print("role_change ");
-  Serial.print(role_change);
-  Serial.print("   ");
-  Serial.print("\t");
+  // Serial.print("role_change ");
+  // Serial.print(role_change);
+  // Serial.print("   ");
+  // Serial.print("\t");
   Serial.println("\t");
 }
