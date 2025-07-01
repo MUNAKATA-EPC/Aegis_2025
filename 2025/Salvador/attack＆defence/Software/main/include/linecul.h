@@ -21,14 +21,12 @@ int mass_cou = 0;
 int mode_line;
 int front_line_val;
 
-
 int defence_goal_dir;
 
 #define LINE_FRONT 280
 
 void line_main()
 {
-
     // Serial.print("line_pre,");
     // Serial.print(line_bit_pre);
     // Serial.print(" ");
@@ -54,6 +52,7 @@ void line_main()
                             {
                                 if (front_line_val > LINE_FRONT)
                                 { // 前　　後　
+                                    line_bit_cul -= 700000;
                                 }
                                 else
                                 { // 　　後　
@@ -66,6 +65,7 @@ void line_main()
                             {
                                 if (front_line_val > LINE_FRONT)
                                 { // 前　左
+                                    line_bit_cul -= 600000;
                                 }
                                 else
                                 { // 　左
@@ -79,6 +79,7 @@ void line_main()
                         {
                             if (front_line_val > LINE_FRONT)
                             { // 前　左　後
+                                line_bit_cul -= 500000;
                             }
                             else
                             { // 　左　後
@@ -93,6 +94,7 @@ void line_main()
                     {
                         if (front_line_val > LINE_FRONT)
                         { // 前右　
+                            line_bit_cul -= 400000;
                         }
                         else
                         { // 右　
@@ -106,6 +108,7 @@ void line_main()
                 {
                     if (front_line_val > LINE_FRONT)
                     { // 前右　　後
+                        line_bit_cul -= 300000;
                     }
                     else
                     { // 右　　後
@@ -120,6 +123,7 @@ void line_main()
             {
                 if (front_line_val > LINE_FRONT)
                 { // 前 左　右
+                    line_bit_cul -= 200000;
                 }
                 else
                 { // 左　右
@@ -133,6 +137,7 @@ void line_main()
         {
             if (front_line_val > LINE_FRONT)
             { // 前右　左　後
+                line_bit_cul -= 100000;
             }
             else
             { // 右　左　後
@@ -286,6 +291,9 @@ void line_main()
     }
     if (mass2 < 500)
     {
+        // if(mass2 == 157.50){
+        //     mass2 = 180;
+        // }
         mass2 -= 180;
         if (mass2 < 0)
         {
@@ -300,6 +308,8 @@ void line_main()
             mass3 += 360;
         }
     }
+
+
     if (mass_cou == 2)
     {
         int abcd = mass1;
@@ -315,14 +325,23 @@ void line_main()
             mass1 = bcde;
             mass2 = mass3;
             mass3 = abcd;
-        }else{
+
+
+        }
+        else
+        {
             mass1 = mass3;
             mass2 = abcd;
             mass3 = bcde;
 
+        
         }
     }
-
+    if(mass1>mass2){
+        int a = mass1;
+        mass1 = mass2;
+        mass1 = a;
+    }
     Serial.print("mass1,");
     Serial.print(mass1);
     Serial.print(" ");
@@ -332,6 +351,7 @@ void line_main()
     Serial.print("mass3,");
     Serial.print(mass3);
     Serial.print(" ");
+
     Serial.print("masscou,");
     Serial.print(mass_cou);
     Serial.print(" ");
