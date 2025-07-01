@@ -923,6 +923,24 @@ void loop()
   }
   else
   {
+    if (mode_change == 1)
+    {
+      KICK_TEST.start();
+      KICK_TEST.tick();
+      kick_test_time = KICK_TEST.get_value();
+      if (kick_test_time >= 100 && kick_test_time <= 300)
+      {
+        digitalWrite(TEST, LOW);
+        digitalWrite(kicker, HIGH);
+        delay(30);
+        digitalWrite(kicker, LOW);
+        KICK_TEST.reset();
+        kick_test_time = KICK_TEST.get_value();
+        KICK_fin = false;
+        mode_change = 0;
+      }
+    }
+
     move(0, 0, 0, 0);
   }
 
