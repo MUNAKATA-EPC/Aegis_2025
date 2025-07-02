@@ -268,22 +268,10 @@ void line_main()
             }
         }
     }
-    if (line_data[0] == 1 && line_data[15] == 1)
-    {
-        if (mass_cou == 2)
-        {
-            mass1 = ((mass1 + 360) + mass2) / 2;
-            mass2 = mass1;
-        }
-        else if (mass_cou == 3)
-        {
-            mass1 = ((mass1 + 360) + mass3) / 2;
-        }
-    }
-
+    
     if (mass1 < 500)
-    {
-        mass1 -= 180;
+    {mass1 -= 180;
+       
         if (mass1 < 0)
         {
             mass1 += 360;
@@ -309,6 +297,18 @@ void line_main()
         }
     }
 
+    if (line_data[0] == 1 && line_data[15] == 1)
+    {
+        if (mass_cou == 2)
+        {
+            mass1 = ((mass1 + 360) + mass2) / 2;
+            mass2 = mass1;
+        }
+        else if (mass_cou == 3)
+        {
+            mass1 = ((mass1 + 360) + mass3) / 2;
+        }
+    }
 
     if (mass_cou == 2)
     {
@@ -325,23 +325,21 @@ void line_main()
             mass1 = bcde;
             mass2 = mass3;
             mass3 = abcd;
-
-
         }
         else
         {
             mass1 = mass3;
             mass2 = abcd;
             mass3 = bcde;
-
-        
         }
     }
-    if(mass1>mass2){
+    if (mass1 > mass2)
+    {
         int a = mass1;
         mass1 = mass2;
         mass1 = a;
     }
+
     Serial.print("mass1,");
     Serial.print(mass1);
     Serial.print(" ");
@@ -351,7 +349,6 @@ void line_main()
     Serial.print("mass3,");
     Serial.print(mass3);
     Serial.print(" ");
-
     Serial.print("masscou,");
     Serial.print(mass_cou);
     Serial.print(" ");
