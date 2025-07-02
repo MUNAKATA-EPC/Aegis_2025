@@ -49,13 +49,5 @@ public:
     return result;
   }
 };
-average linecenterval;
-average linerightval;
-average lineleftval;
-average linebackval;
-average leftcenterval;
-average rightcenterval;
-average leftbackval;
-average rightbackval;
-
-
+average v_ave;
+average v_deg_ave;

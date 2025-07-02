@@ -49,6 +49,4 @@ public:
     }
 };
 
-timer rainbow_timer;
-//timer CAMERA;
-//timer SPEED;
+timer LINE;
