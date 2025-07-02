@@ -26,7 +26,7 @@ black = (0, 36, -43, 41, -19, 12)
 
 wall_balck = [0,0]
 
-screen_center = [150, 110]                  # 画面の中央座標
+screen_center = [170, 90]                  # 画面の中央座標
 
 court = [0, 0]
 

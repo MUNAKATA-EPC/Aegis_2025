@@ -17,7 +17,7 @@ int line_pin_num;
 
 
 int line_resarch[] = {122, 140, 137, 162, 222, 123, 125, 126, 152, 82, 82, 172, 112, 148, 162, 162};
-int line_resarch_side[] = {115,90,15};
+int line_resarch_side[] = {300,350,300};
 int line_vec_sheck;
 
 float line_dir_sin;
