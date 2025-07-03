@@ -464,11 +464,11 @@ void defence()
             {
               if (abs(IR_dir) > 135)
               {
-                Move_Deg(0, 0);
+                Move_Deg(180, 20);
               }
               else
               {
-                if (goal_line_change - 10 > IR_dir)
+                if (goal_line_change - 6 > IR_dir)
                 {
                   if (abs(mass1 - 0) < abs(mass2 - 360))
                   {
@@ -498,31 +498,39 @@ void defence()
             }
             else
             {
-              if (goal_line_change > IR_dir)
+              if (abs(IR_dir) > 135)
               {
-                if (abs(mass1 - 0) < abs(mass2 - 360))
-                {
-                  Move_Deg(mass1, 60);
-                }
-                else
-                {
-                  Move_Deg(mass2, 60);
-                }
-              }
-              else if (goal_line_change + 10 < IR_dir)
-              {
-                if (abs(mass1 - 0) < abs(mass2 - 360))
-                {
-                  Move_Deg(mass2, 20);
-                }
-                else
-                {
-                  Move_Deg(mass1, 20);
-                }
+                Move_Deg(180, 20);
               }
               else
               {
-                Move_Deg(0, 0);
+                if (goal_line_change > IR_dir)
+                {
+
+                  if (abs(mass1 - 0) < abs(mass2 - 360))
+                  {
+                    Move_Deg(mass1, 60);
+                  }
+                  else
+                  {
+                    Move_Deg(mass2, 60);
+                  }
+                }
+                else if (goal_line_change + 10 < IR_dir)
+                {
+                  if (abs(mass1 - 0) < abs(mass2 - 360))
+                  {
+                    Move_Deg(mass2, 20);
+                  }
+                  else
+                  {
+                    Move_Deg(mass1, 20);
+                  }
+                }
+                else
+                {
+                  Move_Deg(0, 0);
+                }
               }
             }
           }
