@@ -139,6 +139,9 @@ void loop()
     cos_ful = No1_val_cos + IR_pra1_cos + IR_minu1_cos;
 
     IR_dir = atan2(sin_ful, cos_ful) * 180 / PI;
+    if(abs(IR_dir) > 170){////なんかここおかしい
+      IR_dir = IR_dir * -1;
+    }
 
 
 
@@ -153,62 +156,62 @@ void loop()
   Serial1.flush();
 
   // Serial.print(IR_No1);
-  /*Serial.print("\t");
-  Serial.print(IR_pra1);
-  Serial.print("\t");
-  Serial.print(IR_pra2);
-  Serial.print("\t");
-  Serial.print(IR_pra3);
-  Serial.print("\t");
-  Serial.print(IR_minu1);
-  Serial.print("\t");
-  Serial.print(IR_minu2);
-  Serial.print("\t");
-  Serial.print(IR_minu3);
-  Serial.println("\t");*/
+  // Serial.print("\t");
+  // Serial.print(IR_pra1);
+  // Serial.print("\t");
+  // Serial.print(IR_pra2);
+  // Serial.print("\t");
+  // // Serial.print(IR_pra3);
+  // Serial.print("\t");
+  // Serial.print(IR_minu1);
+  // Serial.print("\t");
+  // Serial.print(IR_minu2);
+  // Serial.print("\t");
+  // // Serial.print(IR_minu3);
+  // Serial.print("\t");
 
-  // Serial.println("\t");
   // Serial.print(IR_No1);
   // Serial.print("\t");
-  Serial.print(IR_dis);
-  Serial.print("\t");
-  Serial.print(IR_dir);
-  Serial.print("\t");
+  // Serial.print(IR_dis);
+  // Serial.print("\t");
+  // Serial.print(IR_dir);
+  // Serial.print("\t");
   // Serial.print(No1_val);
   // Serial.print("\t");
 
   // delay(100);
 
   // Serial.print(readMux(0));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(1));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(2));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(3));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(4));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(5));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(6));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(7));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(8));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(9));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(10));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(11));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(12));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(13));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(14));
-  // Serial.print("  ");
+  // Serial.print("\t");
   // Serial.print(readMux(15));
-  Serial.println("");
+  // Serial.print("\t");
+  // Serial.println("");
 }
