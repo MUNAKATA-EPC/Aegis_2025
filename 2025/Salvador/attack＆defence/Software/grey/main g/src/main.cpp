@@ -108,7 +108,7 @@ void setup()
   pinMode(resetpin, INPUT_PULLDOWN);
   pinMode(front_line, INPUT);
   oled_setup();
-
+  
   Serial.begin(115200);
 
   Serial1.begin(115200); // motor
