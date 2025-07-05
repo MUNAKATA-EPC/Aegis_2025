@@ -50,6 +50,7 @@ void line_main()
                         {
                             if (line_bit_cul >= 700000)
                             {
+                                mode_line = 3;
                                 if (front_line_val > LINE_FRONT)
                                 { // 前　　後　
                                     line_bit_cul -= 700000;
@@ -58,11 +59,11 @@ void line_main()
                                 { // 　　後　
                                     side_line = 7;
                                     line_bit_cul -= 700000;
-                                    mode_line = 3;
                                 }
                             }
                             else
                             {
+                                mode_line = 0;
                                 if (front_line_val > LINE_FRONT)
                                 { // 前　左
                                     line_bit_cul -= 600000;
@@ -71,12 +72,12 @@ void line_main()
                                 { // 　左
                                     side_line = 6;
                                     line_bit_cul -= 600000;
-                                    mode_line = 0;
                                 }
                             }
                         }
                         else
                         {
+                            mode_line = 0;
                             if (front_line_val > LINE_FRONT)
                             { // 前　左　後
                                 line_bit_cul -= 500000;
@@ -86,12 +87,12 @@ void line_main()
                                 side_line = 5;
                                 line_bit_cul -= 500000;
                                 // mode_line = 2;
-                                mode_line = 0;
                             }
                         }
                     }
                     else
                     {
+                        mode_line = 0;
                         if (front_line_val > LINE_FRONT)
                         { // 前右　
                             line_bit_cul -= 400000;
@@ -100,12 +101,12 @@ void line_main()
                         { // 右　
                             side_line = 4;
                             line_bit_cul -= 400000;
-                            mode_line = 0;
                         }
                     }
                 }
                 else
                 {
+                    mode_line = 0;
                     if (front_line_val > LINE_FRONT)
                     { // 前右　　後
                         line_bit_cul -= 300000;
@@ -115,7 +116,6 @@ void line_main()
                         side_line = 3;
                         line_bit_cul -= 300000;
                         // mode_line = 1;
-                        mode_line = 0;
                     }
                 }
             }
@@ -135,6 +135,7 @@ void line_main()
         }
         else
         {
+            mode_line = 0;
             if (front_line_val > LINE_FRONT)
             { // 前右　左　後
                 line_bit_cul -= 100000;
@@ -143,7 +144,7 @@ void line_main()
             { // 右　左　後
                 side_line = 1;
                 line_bit_cul -= 100000;
-                mode_line = 0;
+             
             }
         }
     }
@@ -151,6 +152,7 @@ void line_main()
     {
         if (front_line_val > LINE_FRONT)
         { // 前
+            mode_line = 3;
         }
         else
         {
@@ -187,6 +189,7 @@ void line_main()
     }
     mass_pre = 0;
     mass_lat = 0;
+    Serial.print(" ");
     for (int i = 0; i < 16; i++)
     {
         if (line_data[i] == 1)
@@ -268,22 +271,42 @@ void line_main()
             }
         }
     }
+
     if (line_data[0] == 1 && line_data[15] == 1)
     {
         if (mass_cou == 2)
         {
+            
             mass1 = ((mass1 + 360) + mass2) / 2;
             mass2 = mass1;
         }
         else if (mass_cou == 3)
         {
-            mass1 = ((mass1 + 360) + mass3) / 2;
+            int ab = mass2;
+            if(defence_goal_dir > 0){
+            mass2 = ((mass1 + 360) + mass3) / 2;
+            mass1 = ab;
+            mass3 = 500;
+            }else{
+            mass3 = ((mass1 + 360) + mass3) / 2;
+            mass1 = ab;
+            mass2 = 500;
+            }
         }
     }
-
+    Serial.print("mass1,");
+    Serial.print(mass1);
+    Serial.print(" ");
+    Serial.print("mass2,");
+    Serial.print(mass2);
+    Serial.print(" ");
+    Serial.print("mass3,");
+    Serial.print(mass3);
+    
     if (mass1 < 500)
     {
         mass1 -= 180;
+       
         if (mass1 < 0)
         {
             mass1 += 360;
@@ -291,9 +314,6 @@ void line_main()
     }
     if (mass2 < 500)
     {
-        // if(mass2 == 157.50){
-        //     mass2 = 180;
-        // }
         mass2 -= 180;
         if (mass2 < 0)
         {
@@ -313,8 +333,11 @@ void line_main()
     if (mass_cou == 2)
     {
         int abcd = mass1;
-        mass1 = mass2;
-        mass2 = abcd;
+        if(mass1 > mass2){
+            mass1 = mass2;
+            mass2 = abcd;
+
+        }
     }
     else if (mass_cou == 3)
     {
@@ -325,32 +348,20 @@ void line_main()
             mass1 = bcde;
             mass2 = mass3;
             mass3 = abcd;
-
-
         }
         else
         {
             mass1 = mass3;
             mass2 = abcd;
             mass3 = bcde;
-
-        
         }
     }
-    if(mass1>mass2){
+    if (mass1 > mass2)
+    {
         int a = mass1;
         mass1 = mass2;
         mass1 = a;
     }
-    Serial.print("mass1,");
-    Serial.print(mass1);
-    Serial.print(" ");
-    Serial.print("mass2,");
-    Serial.print(mass2);
-    Serial.print(" ");
-    Serial.print("mass3,");
-    Serial.print(mass3);
-    Serial.print(" ");
 
     Serial.print("masscou,");
     Serial.print(mass_cou);

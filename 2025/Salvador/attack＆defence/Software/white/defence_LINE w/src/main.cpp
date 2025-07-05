@@ -295,7 +295,7 @@ void loop()
   Serial.print(analogRead(back));
   Serial.print(" ");
   Serial.print("\t");
-  // // // serial_print_side();
+  serial_print_side();
   serial_print_analog();
   serial_print_digital();
   // // // // // Serial.print(" ");
