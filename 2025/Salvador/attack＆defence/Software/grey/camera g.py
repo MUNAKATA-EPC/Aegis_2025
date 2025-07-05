@@ -15,11 +15,11 @@ court_green =(44, 88, -58, -34, -74, 20)
 
 
 
-court_light = (30, 88, -71, -27, -40, 18)
+court_light = (53, 82, -77, -26, -39, 98)
 #############################################################
 
 
-goal_blue =(35, 73, -10, 72, -58, -32)##A
+goal_blue =(20, 45, -41, 18, -80, -18)##A
 #############################################################
 
 black = (0, 36, -43, 41, -19, 12)
@@ -165,7 +165,8 @@ while True:
 
 
 
-    for blob in img.find_blobs([court_green], pixels_threshold=50, area_threshold=50, merge=True,margin=25):
+    for blob in img.find_blobs([court_light
+    ], pixels_threshold=50, area_threshold=50, merge=True,margin=25):
         img.draw_rectangle(blob.rect())
 
 
