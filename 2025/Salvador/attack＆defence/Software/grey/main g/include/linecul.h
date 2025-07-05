@@ -167,9 +167,9 @@ void line_main()
             // }
         }
     }
-    Serial.print("bit_cul,");
-    Serial.print(line_bit_cul);
-    Serial.print(" ");
+    // Serial.print("bit_cul,");
+    // Serial.print(line_bit_cul);
+    // Serial.print(" ");
 
     for (int i = 0; i <= 15; i++)
     {
@@ -189,7 +189,7 @@ void line_main()
     }
     mass_pre = 0;
     mass_lat = 0;
-    Serial.print(" ");
+    // Serial.print(" ");
     for (int i = 0; i < 16; i++)
     {
         if (line_data[i] == 1)
@@ -294,14 +294,14 @@ void line_main()
             }
         }
     }
-    Serial.print("mass1,");
-    Serial.print(mass1);
-    Serial.print(" ");
-    Serial.print("mass2,");
-    Serial.print(mass2);
-    Serial.print(" ");
-    Serial.print("mass3,");
-    Serial.print(mass3);
+    // Serial.print("mass1,");
+    // Serial.print(mass1);
+    // Serial.print(" ");
+    // Serial.print("mass2,");
+    // Serial.print(mass2);
+    // Serial.print(" ");
+    // Serial.print("mass3,");
+    // Serial.print(mass3);
     
     if (mass1 < 500)
     {
@@ -363,24 +363,24 @@ void line_main()
         mass1 = a;
     }
 
-    Serial.print("masscou,");
-    Serial.print(mass_cou);
-    Serial.print(" ");
-    Serial.print("pre,");
-    Serial.print(mass_pre);
-    Serial.print(" ");
-    Serial.print("mass_lat,");
-    Serial.print(mass_lat);
-    Serial.print(" ");
+    // Serial.print("masscou,");
+    // Serial.print(mass_cou);
+    // Serial.print(" ");
+    // Serial.print("pre,");
+    // Serial.print(mass_pre);
+    // Serial.print(" ");
+    // Serial.print("mass_lat,");
+    // Serial.print(mass_lat);
+    // Serial.print(" ");
 
     for (int i = 0; i < 16; i++)
     {
         Serial.print(line_data[i]);
         Serial.print(" ");
     }
-    Serial.print("mode,");
-    Serial.print(mode_line);
-    Serial.print(" ");
+    // Serial.print("mode,");
+    // Serial.print(mode_line);
+    // Serial.print(" ");
 
     // Serial.print("mass_lat,");
     // Serial.print(mass_lat);
