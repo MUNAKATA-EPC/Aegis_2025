@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#ifndef _TIMER_H
+#define _TIMER_H
 class timer
 {
 private:
@@ -62,3 +64,4 @@ timer BUTTON_right;
 timer BUTTON_center;
 timer RULU;
 timer LINE;
+#endif

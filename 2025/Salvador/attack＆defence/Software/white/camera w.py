@@ -19,7 +19,7 @@ court_light = (30, 88, -71, -27, -40, 18)
 #############################################################
 
 
-goal_blue =(35, 73, -10, 72, -58, -32)##A
+goal_blue =(20, 66, -26, 17, -38, -14)##A
 #############################################################
 
 black = (0, 36, -43, 41, -19, 12)
@@ -73,7 +73,7 @@ sensor.set_contrast(0)#明暗sensor.set_saturation(0);
 
 
 sensor.set_auto_gain(False);
-sensor.set_auto_exposure(False);
+# sensor.set_auto_exposure(False);
 
 
 sensor.reset()  # Reset and initialize the sensor.

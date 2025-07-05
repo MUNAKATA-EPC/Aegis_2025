@@ -9,7 +9,8 @@
 #include "vector.cpp"
 #include <oled.h>
 #include <linecul.h>
-
+#include<kicker.hpp>
+#include "kicker.cpp"
 #define STARTPIN 3
 #define role_changepin 36
 #define camera_changepin 35
@@ -44,6 +45,7 @@ int IR_dis;
 int touch;
 int kick_time;
 int kick_test_time;
+Kicker kicker_; // Kickerクラスのオブジェクトを作成
 
 // cammera
 int court_dir;
@@ -108,6 +110,8 @@ void setup()
   pinMode(resetpin, INPUT_PULLDOWN);
   pinMode(front_line, INPUT);
   oled_setup();
+  kicker_.init(32, 30); // Kickerクラスの初期化
+
   
   Serial.begin(115200);
 
@@ -843,6 +847,7 @@ void loop()
   camera_change = digitalRead(camera_changepin);
   oled_change = digitalRead(oled_changepin);
   front_line_val = analogRead(front_line);
+  kicker_.loop(); // Kickerクラスのloopを呼ぶ
   ///////////oled関係
   oled_button();
   if (digitalRead(oled_start_pin) == 1)
@@ -933,20 +938,21 @@ void loop()
   {
     if (mode_change == 1)
     {
-      KICK_TEST.start();
-      KICK_TEST.tick();
-      kick_test_time = KICK_TEST.get_value();
-      if (kick_test_time >= 100 && kick_test_time <= 300)
-      {
-        digitalWrite(TEST, LOW);
-        digitalWrite(kicker, HIGH);
-        delay(30);
-        digitalWrite(kicker, LOW);
-        KICK_TEST.reset();
-        kick_test_time = KICK_TEST.get_value();
-        KICK_fin = false;
+      // KICK_TEST.start();
+      // KICK_TEST.tick();
+      // kick_test_time = KICK_TEST.get_value();
+      // if (kick_test_time >= 100 && kick_test_time <= 300)
+      // {
+      //   digitalWrite(TEST, LOW);
+      //   digitalWrite(kicker, HIGH);
+      //   delay(30);
+      //   digitalWrite(kicker, LOW);
+      //   KICK_TEST.reset();
+      //   kick_test_time = KICK_TEST.get_value();
+      //   KICK_fin = false;
         mode_change = 0;
-      }
+      // }
+      kicker_.kick(0,100); // Kickerクラスのkickメソッドを呼び出す
     }
 
     move(0, 0, 0, 0);
