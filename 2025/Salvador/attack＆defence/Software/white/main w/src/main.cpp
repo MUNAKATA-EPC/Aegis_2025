@@ -7,8 +7,11 @@
 
 #include <motor.h>
 #include "vector.cpp"
+#include <kicker.hpp>
+#include "kicker.cpp"
 #include <oled.h>
 #include <linecul.h>
+#include <timer.h>
 
 #define STARTPIN 3
 #define role_changepin 36
@@ -44,7 +47,7 @@ int IR_dis;
 int touch;
 int kick_time;
 int kick_test_time;
-
+Kicker kicker_; // Kickerクラスのオブジェクトを作成
 // cammera
 int court_dir;
 int yellow_dir;
@@ -108,6 +111,7 @@ void setup()
   pinMode(resetpin, INPUT_PULLDOWN);
   pinMode(front_line, INPUT);
   oled_setup();
+  kicker_.init(32,30); // Kickerクラスのinitを呼ぶ
 
   Serial.begin(115200);
 
@@ -163,18 +167,21 @@ void attacker()
     {
       if (touch == 1)
       {
-        KICK.start();
-        KICK.tick();
-        kick_time = KICK.get_value();
-        if (kick_time >= 150)
-        {
-          digitalWrite(TEST, LOW);
-          digitalWrite(kicker, HIGH);
-          delay(30);
-          digitalWrite(kicker, LOW);
-          KICK.reset();
-          kick_time = 0;
-        }
+        // KICK.start();
+        // KICK.tick();
+        // kick_time = KICK.get_value();
+        // if (kick_time >= 150)
+        // {
+        //   digitalWrite(TEST, LOW);
+        //   digitalWrite(kicker, HIGH);
+
+        //   delay(30);
+        //   digitalWrite(kicker, LOW);
+        //   KICK.reset();
+        //   kick_time = 0;
+        // }
+        
+        kicker_.kick(300,100);
         Move_Deg(0, move_speed + 10);
       }
       else
@@ -739,23 +746,25 @@ void defence()
           {
             if (touch == 1)
             {
-              KICK.start();
-              KICK.tick();
-              kick_time = KICK.get_value();
-              if (kick_time >= 100)
-              {
-                digitalWrite(TEST, LOW);
-                digitalWrite(kicker, HIGH);
-                delay(30);
-                digitalWrite(kicker, LOW);
-                KICK.reset();
-                kick_time = 0;
-                Move_Deg(0, move_speed);
-              }
-              else
-              {
-                Move_Deg(0, move_speed);
-              }
+              // KICK.start();
+              // KICK.tick();
+              // kick_time = KICK.get_value();
+              // if (kick_time >= 100)
+              // {
+              //   digitalWrite(TEST, LOW);
+              //   digitalWrite(kicker, HIGH);
+              //   delay(30);
+              //   digitalWrite(kicker, LOW);
+              //   KICK.reset();
+              //   kick_time = 0;
+              //   Move_Deg(0, move_speed);
+              // }
+              // else
+              // {
+              //   Move_Deg(0, move_speed);
+              // }
+              kicker_.kick(0,0);
+              Move_Deg(0, move_speed);
             }
             else
             {
@@ -835,6 +844,7 @@ void loop()
   camera_change = digitalRead(camera_changepin);
   oled_change = digitalRead(oled_changepin);
   front_line_val = analogRead(front_line);
+  kicker_.loop(); // Kickerクラスのloopを呼ぶ
   ///////////oled関係
   oled_button();
   if (digitalRead(oled_start_pin) == 1)
@@ -925,20 +935,22 @@ void loop()
   {
     if (mode_change == 1)
     {
-      KICK_TEST.start();
-      KICK_TEST.tick();
-      kick_test_time = KICK_TEST.get_value();
-      if (kick_test_time >= 100 && kick_test_time <= 300)
-      {
-        digitalWrite(TEST, LOW);
-        digitalWrite(kicker, HIGH);
-        delay(30);
-        digitalWrite(kicker, LOW);
-        KICK_TEST.reset();
-        kick_test_time = KICK_TEST.get_value();
-        KICK_fin = false;
-        mode_change = 0;
-      }
+      // KICK_TEST.start();
+      // KICK_TEST.tick();
+      // kick_test_time = KICK_TEST.get_value();
+      // if (kick_test_time >= 100 && kick_test_time <= 300)
+      // {
+      //   digitalWrite(TEST, LOW);
+      //   digitalWrite(kicker, HIGH);
+      //   delay(30);
+      //   digitalWrite(kicker, LOW);
+      //   KICK_TEST.reset();
+      //   kick_test_time = KICK_TEST.get_value();
+      //   KICK_fin = false;
+      //   mode_change = 0;
+      // }
+      kicker_.kick(0,0);
+      mode_change = 0;
     }
 
     move(0, 0, 0, 0);
