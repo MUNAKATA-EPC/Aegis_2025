@@ -64,5 +64,4 @@ timer BUTTON_right;
 timer BUTTON_center;
 timer RULU;
 timer LINE;
-timer send_timer_line;
 #endif

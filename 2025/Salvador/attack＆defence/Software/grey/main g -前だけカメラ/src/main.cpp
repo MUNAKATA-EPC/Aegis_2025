@@ -155,7 +155,7 @@ void attacker_setup()
 
 void attacker()
 {
-  move_speed = 90;
+  move_speed = 75;
 
   if (line_bit > 0 || front_line_val > LINE_FRONT)
   {
@@ -203,7 +203,7 @@ void attacker()
 
         if (IR_dis > 11)
         {
-          atack_goal_dir = -500;
+          // atack_goal_dir = -500;
           Move_Deg(IR_dir, move_speed);
         }
         else
@@ -263,7 +263,7 @@ void attacker()
     }
   }
 
-  if (IR_dir > 30 && IR_dir < 330)
+  if (IR_dir < 30 && IR_dir > 330)
   {
     atack_goal_dir = -500;
   }
