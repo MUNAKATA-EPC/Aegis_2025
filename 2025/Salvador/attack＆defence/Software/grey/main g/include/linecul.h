@@ -23,7 +23,7 @@ int front_line_val;
 
 int defence_goal_dir;
 
-#define LINE_FRONT 280
+#define LINE_FRONT 180
 
 void line_main()
 {
