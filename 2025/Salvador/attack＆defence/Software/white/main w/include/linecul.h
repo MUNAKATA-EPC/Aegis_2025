@@ -1,3 +1,5 @@
+#ifndef LINECUL_H
+#define LINECUL_H
 #include <Arduino.h>
 //////ライン関連//////////
 int line;
@@ -23,7 +25,7 @@ int front_line_val;
 
 int defence_goal_dir;
 
-#define LINE_FRONT 280
+#define LINE_FRONT 200
 
 void line_main()
 {
@@ -57,7 +59,7 @@ void line_main()
                                 }
                                 else
                                 { // 　　後　
-                                    side_line = 7;
+                                    side_line = 0;
                                     line_bit_cul -= 700000;
                                 }
                             }
@@ -65,11 +67,12 @@ void line_main()
                             {
                                 mode_line = 0;
                                 if (front_line_val > LINE_FRONT)
-                                { // 前　左
+                                { // 前　右
+                                    side_line = 5;
                                     line_bit_cul -= 600000;
                                 }
                                 else
-                                { // 　左
+                                { // 　右
                                     side_line = 6;
                                     line_bit_cul -= 600000;
                                 }
@@ -79,12 +82,12 @@ void line_main()
                         {
                             mode_line = 0;
                             if (front_line_val > LINE_FRONT)
-                            { // 前　左　後
+                            { // 前　右　後
                                 line_bit_cul -= 500000;
                             }
                             else
-                            { // 　左　後
-                                side_line = 5;
+                            { // 　右　後
+                                side_line = 7;
                                 line_bit_cul -= 500000;
                                 // mode_line = 2;
                             }
@@ -94,12 +97,13 @@ void line_main()
                     {
                         mode_line = 0;
                         if (front_line_val > LINE_FRONT)
-                        { // 前右　
+                        { // 前左
+                            side_line = 3;
                             line_bit_cul -= 400000;
                         }
                         else
-                        { // 右　
-                            side_line = 4;
+                        { // 左
+                            side_line = 2;
                             line_bit_cul -= 400000;
                         }
                     }
@@ -112,8 +116,8 @@ void line_main()
                         line_bit_cul -= 300000;
                     }
                     else
-                    { // 右　　後
-                        side_line = 3;
+                    { // 左　　後
+                        side_line = 1;
                         line_bit_cul -= 300000;
                         // mode_line = 1;
                     }
@@ -127,7 +131,6 @@ void line_main()
                 }
                 else
                 { // 左　右
-                    side_line = 2;
                     line_bit_cul -= 200000;
                     mode_line = 4;
                 }
@@ -142,7 +145,6 @@ void line_main()
             }
             else
             { // 右　左　後
-                side_line = 1;
                 line_bit_cul -= 100000;
              
             }
@@ -152,11 +154,11 @@ void line_main()
     {
         if (front_line_val > LINE_FRONT)
         { // 前
+            side_line = 4;
             mode_line = 3;
         }
         else
         {
-            side_line = 0;
             line_bit_cul += 0;
             // if (line_bit_cul > 0)
             // {
@@ -397,3 +399,4 @@ int line_dir_stop(int mass_1, int mass_2)
     line_dir = atan2(mass_sin, mass_cos) * 180 / PI;
     return line_dir;
 }
+#endif // LINECUL_H

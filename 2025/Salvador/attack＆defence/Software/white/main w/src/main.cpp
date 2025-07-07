@@ -4,6 +4,8 @@
 #include <utility/imumaths.h>
 #include <SPI.h>
 #include <Servo.h>
+#include <engelline.hpp>
+#include "engelline.cpp"
 
 #include <motor.h>
 #include "vector.cpp"
@@ -139,6 +141,8 @@ void setup()
 }
 void attacker_setup()
 {
+  
+  process_engelline();
   atack_goal_dir = atack_goal_dir * -1;
   if (IR_dir < 0)
   {
@@ -156,7 +160,18 @@ void attacker()
     LINE_reaction.tick();
     line_time_all = LINE_reaction.get_value();
     atack_goal_dir = 300;
-    Move_Deg(court_dir, move_speed);
+    if(mass1 < 500){
+        if(is_halfout){
+      Serial.print("halfout");
+          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+        }else{
+          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+        }
+    }else{
+      
+          Move_Deg(side_line * 45, move_speed + 10);
+    }
+    // Move_Deg(court_dir, move_speed);
   }
   else
   {
@@ -182,7 +197,7 @@ void attacker()
         //   kick_time = 0;
         // }
         kicker_.kick(0, 100);
-        Move_Deg(0, move_speed + 10);
+        Move_Deg(0, move_speed);
       }
       else
       {
@@ -284,7 +299,7 @@ void defence()
   move_speed = 45;
   if (com_mode == 0)
   {
-    
+
     PID_mode = 0;
     if (line_start_ == 0)
     {
@@ -704,7 +719,7 @@ void defence()
   else if (com_mode == 2)
   {
     move_speed = 80;
-    if (atack_goal_dir == 500 || atack_goal_dir ==-500)
+    if (atack_goal_dir == 500 || atack_goal_dir == -500)
     {
       PID_mode = 0;
     }
@@ -895,6 +910,10 @@ void defence()
 
 void loop()
 {
+
+  is_line_detected();
+  // is_line_evacuation();
+  is_previous_line_detected();
   kicker_.loop(); // Kickerクラスのloopを呼ぶ
   digitalWrite(TEST, HIGH);
   touch = digitalRead(TOUCH);
@@ -1039,24 +1058,24 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  Serial.print("goal_dir ");
-  Serial.print(defence_goal_dir);
-  Serial.print("   ");
-  Serial.print("\t");
+  // Serial.print("goal_dir ");
+  // Serial.print(defence_goal_dir);
+  // Serial.print("   ");
+  // Serial.print("\t");
 
-  Serial.print("line_change ");
-  Serial.print(goal_line_change);
-  Serial.print("   ");
+  // Serial.print("line_change ");
+  // Serial.print(goal_line_change);
+  // Serial.print("   ");
 
-  Serial.print("atack_goal_dir ");
-  Serial.print(atack_goal_dir);
-  Serial.print("   ");
-  Serial.print("\t");
+  // Serial.print("atack_goal_dir ");
+  // Serial.print(atack_goal_dir);
+  // Serial.print("   ");
+  // Serial.print("\t");
 
-  Serial.print("goal_dis ");
-  Serial.print(defence_goal_dis);
-  Serial.print("   ");
-  Serial.print("\t");
+  // Serial.print("goal_dis ");
+  // Serial.print(defence_goal_dis);
+  // Serial.print("   ");
+  // Serial.print("\t");
 
   // Serial.print("front ");
   // Serial.print(front_line_val);
@@ -1072,9 +1091,14 @@ void loop()
   // Serial.print(role_change);
   // Serial.print("   ");
   // Serial.print("\t");
-  Serial.print("com ");
-  Serial.print(com_mode);
+  // Serial.print("com ");
+  // Serial.print(com_mode);
+  // Serial.print("   ");
+  Serial.print("side ");
+  Serial.print(side_line);
   Serial.print("   ");
+  Serial.print("evacuation_deg ");
+  Serial.print(line_evacuation_deg);
   // Serial.print("IR_li ");
   // Serial.print(IR_line_change);
   // Serial.print("   ");
