@@ -231,7 +231,11 @@ void Move_Deg(int deg, float power)
   float power_No1 = 0;
   float lost_power;
 
+<<<<<<< HEAD
   int pid_val = PID_gain(1.0, 9.0, 0.6, 1.7, gyro_deg, atack_goal_dir, 40);
+=======
+  int pid_val = PID_gain(1.0, 9.0, 0.75, 9.0, gyro_deg, atack_goal_dir, 40);
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
   // int pid_val = PID_gain(3.7, 8.5, 0.5, 9.5, gyro_deg, goal_dir, 40);
   // int pid_val = PID_gain(1.4,1.5, 0.5, 9.5, gyro_deg, goal_dir, 40);
 

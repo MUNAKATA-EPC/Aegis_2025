@@ -11,8 +11,7 @@
 #include "kicker.cpp"
 #include <oled.h>
 #include <linecul.h>
-#include<kicker.hpp>
-#include "kicker.cpp"
+
 #define STARTPIN 3
 #define role_changepin 36
 #define camera_changepin 35
@@ -48,10 +47,14 @@ int touch;
 int kick_time;
 int kick_test_time;
 <<<<<<< HEAD
+<<<<<<< HEAD
 Kicker kicker_;
 =======
 Kicker kicker_; // Kickerクラスのオブジェクトを作成
 >>>>>>> 0a33dc60905cd34c48eaa2d7657d1f82efe04c33
+=======
+Kicker kicker_;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
 
 // cammera
 int court_dir;
@@ -103,6 +106,7 @@ bool atack_test = false;
 long RandomNumber; // 「RandomNumber」をlongで変数宣言
 bool random_first = true;
 bool start_first = true;
+<<<<<<< HEAD
 
 int kick_off_time ;
 int kick_touch_time ;
@@ -161,7 +165,12 @@ void select_pid()
     }
   }
 }
+=======
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
 
+int kick_off_time;
+int kick_touch_time;
+//////////////////////////////////////////////////////////////////
 void setup()
 {
   analogWriteResolution(10);
@@ -181,6 +190,7 @@ void setup()
   pinMode(front_line, INPUT);
   oled_setup();
 <<<<<<< HEAD
+<<<<<<< HEAD
   kicker_.init(32, 30);
 
 =======
@@ -188,6 +198,10 @@ void setup()
 
   
 >>>>>>> 0a33dc60905cd34c48eaa2d7657d1f82efe04c33
+=======
+  kicker_.init(32, 30);
+
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
   Serial.begin(115200);
 
   Serial1.begin(115200); // motor
@@ -221,11 +235,19 @@ void attacker_setup()
 
 void attacker()
 {
+<<<<<<< HEAD
   move_speed = 95;
 
   if (line_bit > 0 || front_line_val > LINE_FRONT)
   {
     // atack_goal_dir = 500;
+=======
+  move_speed = 90;
+
+  if (line_bit > 0 || front_line_val > LINE_FRONT)
+  {
+    atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
     LINE_reaction.start(); // line timer スタート
     LINE_reaction.tick();
     line_time_all = LINE_reaction.get_value();
@@ -236,7 +258,11 @@ void attacker()
     LINE_reaction.reset();
     if (IR_dir == 500)
     {
+<<<<<<< HEAD
       // atack_goal_dir = 500;
+=======
+      atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
       Move_Deg(0, 0);
     }
     else
@@ -244,6 +270,10 @@ void attacker()
 
       if (touch == 1)
       {
+<<<<<<< HEAD
+=======
+        // atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
         if (IR_dir < 20 || IR_dir > 340)
         {
           if (atack_goal_dis < 118)
@@ -264,22 +294,30 @@ void attacker()
       }
       else
       {
-        // goal_dir = 300; // 入れたらゴールPID消去
         KICK.reset();
 
         if (IR_dis > 11)
         {
+<<<<<<< HEAD
+=======
+          atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
           Move_Deg(IR_dir, move_speed);
         }
         else
         {
           if (IR_dir < 17)
           {
+<<<<<<< HEAD
             select_pid();
+=======
+            // atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
             Move_Deg(IR_dir, move_speed);
           }
           else if (IR_dir < 30)
           {
+<<<<<<< HEAD
             select_pid();
             if (goal_pid_select == 0)
             {
@@ -349,6 +387,49 @@ void attacker()
           else
           {
             select_pid();
+=======
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir + 37, move_speed);
+          }
+          else if (IR_dir < 60)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir + 45, move_speed);
+          }
+          else if (IR_dir < 160)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir + 50, move_speed);
+          }
+          else if (IR_dir < 180)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir + 40, move_speed);
+          }
+          else if (IR_dir < 200)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir - 40, move_speed);
+          }
+          else if (IR_dir < 300)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir - 50, move_speed);
+          }
+          else if (IR_dir < 330)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir - 45, move_speed);
+          }
+          else if (IR_dir < 343)
+          {
+            // atack_goal_dir = -500;
+            Move_Deg(IR_dir - 37, move_speed);
+          }
+          else
+          {
+            // atack_goal_dir = -500;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
             Move_Deg(IR_dir, move_speed);
           }
         }
@@ -356,6 +437,14 @@ void attacker()
     }
   }
 
+<<<<<<< HEAD
+=======
+  if (IR_dir > 30 && IR_dir < 330)
+  {
+    atack_goal_dir = -500;
+  }
+
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
   if (atack_goal_dir == -500)
   {
     PID_mode = 0;
@@ -977,7 +1066,6 @@ void loop()
   camera_change = digitalRead(camera_changepin);
   oled_change = digitalRead(oled_changepin);
   front_line_val = analogRead(front_line);
-  kicker_.loop(); // Kickerクラスのloopを呼ぶ
   ///////////oled関係
   oled_button();
   if (digitalRead(oled_start_pin) == 1)
@@ -1131,6 +1219,7 @@ void loop()
     if (mode_change == 1)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       kicker_.kick(0, 100);
       KICK_fin = false;
       mode_change = 0;
@@ -1151,11 +1240,17 @@ void loop()
       // }
       kicker_.kick(0,100); // Kickerクラスのkickメソッドを呼び出す
 >>>>>>> 0a33dc60905cd34c48eaa2d7657d1f82efe04c33
+=======
+      kicker_.kick(0, 100);
+      KICK_fin = false;
+      mode_change = 0;
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
     }
 
     move(0, 0, 0, 0);
   }
 
+<<<<<<< HEAD
   if (atack_goal_dir == -500)
   {
     goal_pid_select = 0;
@@ -1169,6 +1264,21 @@ void loop()
   {
     PID_mode = 1;
   }
+=======
+  // if (atack_goal_dir == -500)
+  // {
+  //   goal_pid_select = 0;
+  // }
+
+  // if (goal_pid_select == 0)
+  // {
+  //   PID_mode = 0;
+  // }
+  // else
+  // {
+  //   PID_mode = 1;
+  // }
+>>>>>>> e0d80c0c441cb3f7bc8900d1076c2ea7ef948a5f
 
   Serial.print("IR_dir ");
   Serial.print(IR_dir);
