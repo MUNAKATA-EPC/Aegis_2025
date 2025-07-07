@@ -15,7 +15,7 @@ court_green =(44, 88, -58, -34, -74, 20)
 
 
 
-court_light = (53, 82, -77, -26, -39, 98)
+court_light = (60, 82, -77, -33, -45, 41)
 #############################################################
 
 
@@ -72,8 +72,8 @@ sensor.set_brightness(0)##明度
 sensor.set_contrast(0)#明暗sensor.set_saturation(0);
 
 
-sensor.set_auto_gain(False);
-sensor.set_auto_exposure(False);
+# sensor.set_auto_gain(True);
+# sensor.set_auto_exposure(True);
 
 
 sensor.reset()  # Reset and initialize the sensor.
