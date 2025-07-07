@@ -9,9 +9,9 @@ goal_yellow =(58, 96, -33, 6, 27, 58)# ゴールの色取り用変数(黄色)##A
 
 #######################################################
 #コート
-#court_green =(62, 93, -19, 34, -28, 11)
+court_green =(43, 78, -17, 25, -17, 12)
 # カーペット
-court_green =(44, 88, -58, -34, -74, 20)
+# court_green =(44, 88, -58, -34, -74, 20)
 
 
 
@@ -72,7 +72,7 @@ sensor.set_brightness(0)##明度
 sensor.set_contrast(0)#明暗sensor.set_saturation(0);
 
 
-sensor.set_auto_gain(False);
+# sensor.set_auto_gain(False);
 # sensor.set_auto_exposure(False);
 
 
@@ -88,7 +88,7 @@ while True:
     # to the IDE. The FPS should increase once disconnected.
     img.draw_cross(screen_center[0], screen_center[1])
 
-    img.draw_circle(screen_center[0], screen_center[1],180,[0,0,0],90)
+    img.draw_circle(screen_center[0], screen_center[1],190,[0,0,0],90)
 
     img.draw_circle(screen_center[0], screen_center[1],57,[0, 0, 0], 1, 1)
         #img.draw_circle(screen_center[10], screen_center[1], 12,[0,0,0],50)
