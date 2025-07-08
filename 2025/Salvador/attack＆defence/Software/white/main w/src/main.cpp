@@ -141,7 +141,7 @@ void setup()
 }
 void attacker_setup()
 {
-  
+
   process_engelline();
   atack_goal_dir = atack_goal_dir * -1;
   if (IR_dir < 0)
@@ -160,99 +160,142 @@ void attacker()
     LINE_reaction.tick();
     line_time_all = LINE_reaction.get_value();
     atack_goal_dir = 300;
-    if(mass1 < 500){
-        if(is_halfout){
-      Serial.print("halfout");
-          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-        }else{
-          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-        }
-    }else{
-      
-          Move_Deg(side_line * 45, move_speed + 10);
+    if (mass1 < 500)
+    {
+      if (is_halfout)
+      {
+        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+      }
+      else
+      {
+        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+      }
+    }
+    else
+    {
+      if(is_halfout){
+
+      Move_Deg(side_line * 45 + 180, move_speed + 10);
+      }else{
+      Move_Deg(side_line * 45, move_speed + 10);
+      }
     }
     // Move_Deg(court_dir, move_speed);
   }
   else
   {
-    LINE_reaction.reset();
-    if (IR_dir == 500)
+    if (line_time_all < 300 && line_time_all > 0)
     {
-      Move_Deg(0, 0);
-    }
-    else
+    LINE_reaction.tick();
+    line_time_all = LINE_reaction.get_value();
+    if (mass1 < 500)
     {
-      if (touch == 1)
+      if (is_halfout)
       {
-        // KICK.start();
-        // KICK.tick();
-        // kick_time = KICK.get_value();
-        // if (kick_time >= 150)
-        // {
-        //   digitalWrite(TEST, LOW);
-        //   digitalWrite(kicker, HIGH);
-        //   delay(30);
-        //   digitalWrite(kicker, LOW);
-        //   KICK.reset();
-        //   kick_time = 0;
-        // }
-        kicker_.kick(0, 100);
-        Move_Deg(0, move_speed);
+        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
       }
       else
       {
-        // goal_dir = 300; // 入れたらゴールPID消去
-        KICK.reset();
-        if (IR_dis <= 24)
+        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+      }
+    }
+    else
+    {
+      if(is_halfout){
+
+      Move_Deg(side_line * 45 + 180, move_speed + 10);
+      }else{
+      Move_Deg(side_line * 45, move_speed + 10);
+      }
+    }
+    }
+    else
+    {
+      LINE_reaction.reset();
+      line_time_all = LINE_reaction.get_value();
+      if (IR_dir == 500)
+      {
+        Move_Deg(0, 0);
+      }
+      else
+      {
+        if (touch == 1)
         {
-          if (IR_dir < 15) // 1.61
-          {
-            Move_Deg(0, move_speed);
-          }
-          else if (IR_dir < 30)
-          {
-            Move_Deg(IR_dir + 15, move_speed);
-          }
-          else if (IR_dir < 60)
-          {
-            Move_Deg(IR_dir + 40, move_speed);
-          }
-          else if (IR_dir < 160)
-          {
-            Move_Deg(IR_dir + 60, move_speed);
-          }
-          else if (IR_dir < 190)
-          {
-            Move_Deg(IR_dir + 40, move_speed);
-          }
-          else if (IR_dir < 210)
-          {
-            Move_Deg(IR_dir - 40, move_speed);
-          }
-          else if (IR_dir < 300)
-          {
-            Move_Deg(IR_dir - 60, move_speed);
-          }
-          else if (IR_dir < 330)
-          {
-            Move_Deg(IR_dir - 40, move_speed);
-          }
-          else if (IR_dir < 345)
-          {
-            Move_Deg(IR_dir - 15, move_speed);
-          }
-          else
-          {
-            Move_Deg(0, move_speed); // 1.6
-          }
+          // KICK.start();
+          // KICK.tick();
+          // kick_time = KICK.get_value();
+          // if (kick_time >= 150)
+          // {
+          //   digitalWrite(TEST, LOW);
+          //   digitalWrite(kicker, HIGH);
+          //   delay(30);
+          //   digitalWrite(kicker, LOW);
+          //   KICK.reset();
+          //   kick_time = 0;
+          // }
+          kicker_.kick(0, 100);
+          Move_Deg(0, move_speed);
         }
         else
         {
-          Move_Deg(IR_dir, move_speed);
+          // goal_dir = 300; // 入れたらゴールPID消去
+          KICK.reset();
+          if (IR_dis <= 24)
+          {
+            if (IR_dir < 15) // 1.61
+            {
+              Move_Deg(0, move_speed);
+            }
+            else if (IR_dir < 30)
+            {
+              Move_Deg(IR_dir + 15, move_speed);
+            }
+            else if (IR_dir < 60)
+            {
+              Move_Deg(IR_dir + 40, move_speed);
+            }
+            else if (IR_dir < 160)
+            {
+              Move_Deg(IR_dir + 60, move_speed);
+            }
+            else if (IR_dir < 190)
+            {
+              Move_Deg(IR_dir + 40, move_speed);
+            }
+            else if (IR_dir < 210)
+            {
+              Move_Deg(IR_dir - 40, move_speed);
+            }
+            else if (IR_dir < 300)
+            {
+              Move_Deg(IR_dir - 60, move_speed);
+            }
+            else if (IR_dir < 330)
+            {
+              Move_Deg(IR_dir - 40, move_speed);
+            }
+            else if (IR_dir < 345)
+            {
+              Move_Deg(IR_dir - 15, move_speed);
+            }
+            else
+            {
+              Move_Deg(0, move_speed); // 1.6
+            }
+          }
+          else
+          {
+            Move_Deg(IR_dir, move_speed);
+          }
         }
       }
     }
   }
+
+
+  Serial.print("line_time");
+  Serial.print(line_time_all);
+  Serial.print("\t");
 }
 
 void defence_setup()
@@ -1099,6 +1142,10 @@ void loop()
   Serial.print("   ");
   Serial.print("evacuation_deg ");
   Serial.print(line_evacuation_deg);
+  if(is_halfout){
+
+        Serial.print("halfout");
+  }
   // Serial.print("IR_li ");
   // Serial.print(IR_line_change);
   // Serial.print("   ");

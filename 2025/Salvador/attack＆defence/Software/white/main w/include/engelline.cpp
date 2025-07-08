@@ -182,7 +182,7 @@ void process_engelline()
     if (is_line_detected() && is_previous_line_detected())
     {
         // 前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
-        if (!is_exist_deg_value_in_range(line_deg, line_first_deg, 130))
+        if (!is_exist_deg_value_in_range(line_deg, line_first_deg, 75))
         {
             is_halfout = true;
         }
@@ -191,7 +191,7 @@ void process_engelline()
             is_halfout = false;
 
             // 基準角度と大きくずれていなかったら、基準角度を現在の角度に置き換え
-            if (is_exist_deg_value_in_range(line_deg, line_first_deg, 80))
+            if (is_exist_deg_value_in_range(line_deg, line_first_deg, 40))
             {
                 line_first_deg = line_deg;
             }
