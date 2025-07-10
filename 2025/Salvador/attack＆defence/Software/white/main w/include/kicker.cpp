@@ -41,7 +41,6 @@ void Kicker::loop()
         else
         {
             _kick_timer.reset();
-            _kick_timer.stop();
             _is_kicking = false;
         }
     }
