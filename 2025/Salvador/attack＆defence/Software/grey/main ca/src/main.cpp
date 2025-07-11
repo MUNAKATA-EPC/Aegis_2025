@@ -111,53 +111,53 @@ void select_pid()
 {
   if (atack_goal_dir == -500)
   {
-    goal_pid_select = 0;
-    move_speed = 95;
+    PID_mode = 0;
+    move_speed = 90;
     goal_mode = true;
   }
   else
   {
-    if (-5 <= goal_gyro_dir && goal_gyro_dir <= 10) // マイナス４０、４２は中立点
+    if (-15 <= goal_gyro_dir && goal_gyro_dir <= 15) // マイナス４０、４２は中立点
     {
       goal_mode = true;
-      goal_pid_select = 0;
-      move_speed = 95;
+      PID_mode = 0;
+      move_speed = 90;
     }
-    else if (-5 < goal_gyro_dir && goal_gyro_dir < -20 && goal_mode == true)
+    else if (-15 < goal_gyro_dir && goal_gyro_dir < -30 && goal_mode == true)
     {
       goal_mode = true;
-      goal_pid_select = 0;
-      move_speed = 95;
+      PID_mode = 0;
+      move_speed = 90;
     }
-    else if (-5 < goal_gyro_dir && goal_gyro_dir < -20 && goal_mode == false)
+    else if (-15 < goal_gyro_dir && goal_gyro_dir < -30 && goal_mode == false)
     {
       goal_mode = false;
-      goal_pid_select = 1;
-      move_speed = 65;
+      PID_mode = 1;
+      move_speed = 60;
     }
-    else if (goal_gyro_dir <= -25)
+    else if (goal_gyro_dir <= -30)
     {
       goal_mode = false;
-      goal_pid_select = 1;
-      move_speed = 65;
+      PID_mode = 1;
+      move_speed = 60;
     }
-    else if (10 < goal_gyro_dir && goal_gyro_dir < 20 && goal_mode == true)
+    else if (15 < goal_gyro_dir && goal_gyro_dir < 30 && goal_mode == true)
     {
       goal_mode = true;
-      goal_pid_select = 0;
-      move_speed = 95;
+      PID_mode = 0;
+      move_speed = 90;
     }
-    else if (10 < goal_gyro_dir && goal_gyro_dir < 20 && goal_mode == false)
+    else if (15 < goal_gyro_dir && goal_gyro_dir < 30 && goal_mode == false)
     {
       goal_mode = false;
-      goal_pid_select = 1;
-      move_speed = 65;
+      PID_mode = 1;
+      move_speed = 60;
     }
-    else if (goal_gyro_dir >= 25)
+    else if (goal_gyro_dir >= 30)
     {
       goal_mode = false;
-      goal_pid_select = 1;
-      move_speed = 65;
+      PID_mode = 1;
+      move_speed = 60;
     }
   }
 }
@@ -206,15 +206,15 @@ void setup()
 }
 void attacker_setup()
 {
-  goal_gyro_dir = atack_goal_dir - gyro_deg;
-
   if (random_first == true)
   {
     RandomNumber = random(1, 101); // 1〜2の範囲でランダム数を生成
     random_first = false;
   }
+
   process_engelline();
   atack_goal_dir = atack_goal_dir * -1;
+  goal_gyro_dir = atack_goal_dir - gyro_deg;
   if (IR_dir < 0)
   {
     IR_dir += 360;
@@ -224,7 +224,7 @@ void attacker_setup()
 void attacker()
 {
 
-  move_speed = 90;
+  move_speed = 80;
   if (line_bit > 0 || front_line_val > LINE_FRONT)
   {
     LINE_reaction.start(); // line timer スタート
@@ -257,7 +257,7 @@ void attacker()
   }
   else
   {
-    if (line_time_all < 300 && line_time_all > 0)
+    if (line_time_all < 100 && line_time_all > 0)
     {
       LINE_reaction.tick();
       line_time_all = LINE_reaction.get_value();
@@ -426,9 +426,9 @@ void attacker()
     PID_mode = 1;
   }
 
-  Serial.print("line_time");
-  Serial.print(line_time_all);
-  Serial.print("\t");
+  // Serial.print("line_time");
+  // Serial.print(line_time_all);
+  // Serial.print("\t");
 }
 
 void defence_setup()
@@ -918,7 +918,7 @@ void defence()
     else if (rulu_time >= 0 && rulu_time <= 300)
     {
 
-      Move_Deg(IR_line_change , 70);
+      Move_Deg(IR_line_change, 70);
     }
     else
     {
@@ -1169,16 +1169,7 @@ void loop()
     attacker_setup();
     if (atack_goal_dir == -500)
     {
-      goal_pid_select = 0;
-    }
-
-    if (goal_pid_select == 0)
-    {
       PID_mode = 0;
-    }
-    else
-    {
-      PID_mode = 1;
     }
   }
   else
@@ -1255,22 +1246,9 @@ void loop()
   {
     if (mode_change == 1)
     {
-      // KICK_TEST.start();
-      // KICK_TEST.tick();
-      // kick_test_time = KICK_TEST.get_value();
-      // if (kick_test_time >= 100 && kick_test_time <= 300)
-      // {
-      //   digitalWrite(TEST, LOW);
-      //   digitalWrite(kicker, HIGH);
-      //   delay(30);
-      //   digitalWrite(kicker, LOW);
-      //   KICK_TEST.reset();
-      //   kick_test_time = KICK_TEST.get_value();
-      //   mode_change = 0;
       kicker_.kick(0, 100); // Kickerクラスのkickを呼ぶ
       KICK_fin = false;
       mode_change = 0;
-      // }
     }
 
     move(0, 0, 0, 0);
@@ -1286,15 +1264,20 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  // Serial.print("line_bit ");
-  // Serial.print(line_bit);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("line_bit ");
+  Serial.print(line_bit);
+  Serial.print("   ");
+  Serial.print("\t");
 
-  // Serial.print("gyro_dir ");
-  // Serial.print(gyro_deg);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("gyro_dir ");
+  Serial.print(gyro_deg);
+  Serial.print("   ");
+  Serial.print("\t");
+
+  Serial.print("goal_gyro_dir ");
+  Serial.print(goal_gyro_dir);
+  Serial.print("   ");
+  Serial.print("\t");
 
   // Serial.print("court_dir ");
   // Serial.print(court_dir);
@@ -1337,23 +1320,23 @@ void loop()
   // Serial.print("com ");
   // Serial.print(com_mode);
   // Serial.print("   ");
-  Serial.print("side ");
-  Serial.print(side_line);
-  Serial.print("   ");
-  Serial.print("evacuation_deg ");
-  Serial.print(line_evacuation_deg);
-  if (is_halfout)
-  {
+  // Serial.print("side ");
+  // Serial.print(side_line);
+  // Serial.print("   ");
+  // Serial.print("evacuation_deg ");
+  // Serial.print(line_evacuation_deg);
+  // if (is_halfout)
+  // {
 
-    Serial.print("halfout");
-  }
-  Serial.print("kick_touch_time ");
-  Serial.print(kick_touch_time);
-  Serial.print("   ");
-  Serial.print("\t");
-  Serial.print("kick_off_time ");
-  Serial.print(kick_off_time);
-  Serial.print("   ");
+  //   Serial.print("halfout");
+  // }
+  // Serial.print("kick_touch_time ");
+  // Serial.print(kick_touch_time);
+  // Serial.print("   ");
+  // Serial.print("\t");
+  // Serial.print("kick_off_time ");
+  // Serial.print(kick_off_time);
+  // Serial.print("   ");
   // Serial.print("IR_li ");
   // Serial.print(IR_line_change);
   // Serial.print("   ");
