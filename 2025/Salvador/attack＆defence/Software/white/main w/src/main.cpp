@@ -77,6 +77,7 @@ bool start_first = true;
 
 int kick_off_time;
 int kick_touch_time;
+int Defence_line_change;
 
 /// ゴールキーパー ///////////////////////////////////////////////
 
@@ -433,6 +434,12 @@ void attacker()
 
 void defence_setup()
 {
+
+  if (abs(IR_dir) > 170)
+  {
+    IR_dir = IR_dir * -1;
+  }
+  process_engelline();
   if (defence_goal_dir < 500)
   {
     goal_dir_leave = defence_goal_dir;
@@ -489,7 +496,33 @@ void defence()
       {
         if (line_bit > 0)
         {
-          Move_Deg(court_dir, 80);
+          LINE_reaction.start(); // line timer スタート
+          LINE_reaction.tick();
+          line_time_all = LINE_reaction.get_value();
+          if (mass1 < 500)
+          {
+            if (is_halfout)
+            {
+              Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+            }
+            else
+            {
+              Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+            }
+          }
+          else
+          {
+            if (is_halfout)
+            {
+
+              Move_Deg(side_line * 45 + 180, move_speed + 10);
+            }
+            else
+            {
+              Move_Deg(side_line * 45, move_speed + 10);
+            }
+          }
+          // Move_Deg(court_dir, 80);
         }
         else
         {
@@ -503,7 +536,33 @@ void defence()
         {
           if (defence_goal_dis > 110)
           {
-            Move_Deg(court_dir, 80);
+            LINE_reaction.start(); // line timer スタート
+            LINE_reaction.tick();
+            line_time_all = LINE_reaction.get_value();
+            if (mass1 < 500)
+            {
+              if (is_halfout)
+              {
+                Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+              }
+              else
+              {
+                Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+              }
+            }
+            else
+            {
+              if (is_halfout)
+              {
+
+                Move_Deg(side_line * 45 + 180, move_speed + 10);
+              }
+              else
+              {
+                Move_Deg(side_line * 45, move_speed + 10);
+              }
+            }
+            // Move_Deg(court_dir, 80);
           }
           else
           {
@@ -895,6 +954,39 @@ void defence()
   else if (com_mode == 2)
   {
     move_speed = 80;
+    if (own_goal == true)
+    {
+      Defence_line_change = defence_goal_dir;
+      if (Defence_line_change < 0)
+      {
+        Defence_line_change += 360;
+      }
+      else if (Defence_line_change == 500)
+      {
+        Defence_line_change = -1;
+      }
+
+      if (Defence_line_change == -1)
+      {
+
+        if (abs(IR_dir) < 100)
+        {
+
+          com_mode = 0;
+          own_goal = false;
+        }
+      }
+      else
+      {
+        if (abs(IR_line_change - Defence_line_change) > 45)
+        {
+
+          com_mode = 0;
+          own_goal = false;
+        }
+      }
+    }
+
     if (atack_goal_dir == 500 || atack_goal_dir == -500)
     {
       PID_mode = 0;
@@ -915,10 +1007,10 @@ void defence()
       com_mode = 0;
       RULU.reset();
     }
-    else if (rulu_time >= 0 && rulu_time <= 300)
+    else if (rulu_time > 0 && rulu_time <= 300)
     {
 
-      Move_Deg(IR_line_change , 70);
+      Move_Deg(IR_line_change, 70);
     }
     else
     {
@@ -957,119 +1049,51 @@ void defence()
             {
               if (IR_dis < 500)
               {
-                if (IR_line_change < 10)
+                if (IR_line_change < 17)
                 {
 
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change * 1.4, move_speed);
-                  }
+                  Move_Deg(IR_line_change, move_speed);
                 }
                 else if (IR_line_change < 30)
                 {
 
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change + 32, move_speed);
-                  }
+                  Move_Deg(IR_line_change + 35, move_speed);
                 }
                 else if (IR_line_change < 60)
                 {
-
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change + 70, move_speed);
-                  }
+                  Move_Deg(IR_line_change + 60, move_speed);
                 }
                 else if (IR_line_change < 160)
                 {
 
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change + 60, move_speed);
-                  }
+                  Move_Deg(IR_line_change + 70, move_speed);
                 }
                 else if (IR_line_change < 180)
                 {
-
-                  Move_Deg(IR_line_change + 60, move_speed);
+                  Move_Deg(IR_line_change + 90, move_speed);
                 }
-                else if (IR_line_change < 210)
+                else if (IR_line_change < 200)
                 {
 
-                  Move_Deg(IR_line_change - 60, move_speed);
+                  Move_Deg(IR_line_change - 90, move_speed);
                 }
                 else if (IR_line_change < 300)
                 {
-
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change - 60, move_speed);
-                  }
+                  Move_Deg(IR_line_change - 70, move_speed);
                 }
                 else if (IR_line_change < 330)
                 {
 
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change - 70, move_speed);
-                  }
+                  Move_Deg(IR_line_change - 60, move_speed);
                 }
                 else if (IR_line_change < 350)
                 {
 
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change - 40, move_speed);
-                  }
+                  Move_Deg(IR_line_change - 35, move_speed);
                 }
                 else
                 {
-                  IR_line_change = IR_line_change - 360;
-                  if (own_goal == true)
-                  {
-                    com_mode = 0;
-                    own_goal = false;
-                  }
-                  else
-                  {
-                    Move_Deg(IR_line_change * 1.4, move_speed);
-                  }
+                  Move_Deg(IR_line_change, move_speed);
                 }
               }
               else
@@ -1301,10 +1325,14 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  // Serial.print("goal_dir ");
-  // Serial.print(defence_goal_dir);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("goal_dir ");
+  Serial.print(defence_goal_dir);
+  Serial.print("   ");
+  Serial.print("\t");
+  Serial.print("change_goal_dir ");
+  Serial.print(Defence_line_change);
+  Serial.print("   ");
+  Serial.print("\t");
 
   // Serial.print("line_change ");
   // Serial.print(goal_line_change);
@@ -1329,31 +1357,37 @@ void loop()
   // Serial.print(camera_change);
   // Serial.print("   ");
   // Serial.print("\t");
+  Serial.print("IR_line_change ");
+  Serial.print(IR_line_change);
+  Serial.print("   ");
 
   // Serial.print("role_change ");
   // Serial.print(role_change);
   // Serial.print("   ");
-  // Serial.print("\t");
-  // Serial.print("com ");
-  // Serial.print(com_mode);
-  // Serial.print("   ");
-  Serial.print("side ");
-  Serial.print(side_line);
-  Serial.print("   ");
-  Serial.print("evacuation_deg ");
-  Serial.print(line_evacuation_deg);
-  if (is_halfout)
-  {
-
-    Serial.print("halfout");
-  }
-  Serial.print("kick_touch_time ");
-  Serial.print(kick_touch_time);
-  Serial.print("   ");
   Serial.print("\t");
-  Serial.print("kick_off_time ");
-  Serial.print(kick_off_time);
+  Serial.print("com ");
+  Serial.print(com_mode);
   Serial.print("   ");
+  // Serial.print("side ");
+  // Serial.print(side_line);
+  // Serial.print("   ");
+  // Serial.print("evacuation_deg ");
+  // Serial.print(line_evacuation_deg);
+  // if (is_halfout)
+  // {
+
+  //   Serial.print("halfout");
+  // }
+  // Serial.print("line_time_all ");
+  // Serial.print(line_time_all);
+  // Serial.print("   ");
+  // Serial.print("kick_touch_time ");
+  // Serial.print(kick_touch_time);
+  // Serial.print("   ");
+  // Serial.print("\t");
+  // Serial.print("kick_off_time ");
+  // Serial.print(kick_off_time);
+  // Serial.print("   ");
   // Serial.print("IR_li ");
   // Serial.print(IR_line_change);
   // Serial.print("   ");
