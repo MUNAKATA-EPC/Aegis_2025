@@ -175,16 +175,9 @@ void attacker()
     LINE_reaction.start(); // line timer スタート
     LINE_reaction.tick();
     line_time_all = LINE_reaction.get_value();
-    if (mass1 < 500)
+    if (is_line_evacuation())
     {
-      if (is_halfout)
-      {
-        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-      }
-      else
-      {
-        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-      }
+      Move_Deg(line_evacuation_deg, move_speed + 10);
     }
     else
     {
@@ -247,7 +240,7 @@ void attacker()
           // atack_goal_dir = -500;
           if (IR_dir < 60 || IR_dir > 300)
           {
-            if (atack_goal_dis < 118)
+            if (atack_goal_dis < 105)
             {
               if (atack_goal_dir <= 15 && atack_goal_dir >= -15)
               {
@@ -279,7 +272,7 @@ void attacker()
             }
             else if (IR_dir < 30)
             {
-              Move_Deg(IR_dir + 40, move_speed);
+              Move_Deg(IR_dir + 37, move_speed);
             }
             else if (IR_dir < 60)
             {
@@ -287,7 +280,7 @@ void attacker()
             }
             else if (IR_dir < 160)
             {
-              Move_Deg(IR_dir + 60, move_speed);
+              Move_Deg(IR_dir + 50, move_speed);
             }
             else if (IR_dir < 180)
             {
@@ -299,7 +292,7 @@ void attacker()
             }
             else if (IR_dir < 300)
             {
-              Move_Deg(IR_dir - 60, move_speed);
+              Move_Deg(IR_dir - 50, move_speed);
             }
             else if (IR_dir < 330)
             {
@@ -307,7 +300,7 @@ void attacker()
             }
             else if (IR_dir < 343)
             {
-              Move_Deg(IR_dir - 40, move_speed);
+              Move_Deg(IR_dir - 37, move_speed);
             }
             else
             {
@@ -1051,15 +1044,15 @@ void loop()
   mass3 = 500;
   line_main();
 
-  defence_goal_dir = yellow_dir;
-  defence_goal_dis = yellow_dis;
-  atack_goal_dir = blue_dir;
-  atack_goal_dis = blue_dis;
+  // defence_goal_dir = yellow_dir;
+  // defence_goal_dis = yellow_dis;
+  // atack_goal_dir = blue_dir;
+  // atack_goal_dis = blue_dis;
 
-  // defence_goal_dir = blue_dir;
-  // defence_goal_dis = blue_dis;
-  // atack_goal_dir = yellow_dir;
-  // atack_goal_dis = yellow_dis;
+  defence_goal_dir = blue_dir;
+  defence_goal_dis = blue_dis;
+  atack_goal_dir = yellow_dir;
+  atack_goal_dis = yellow_dis;
 
   if (role_change == 0)
   {
@@ -1171,10 +1164,11 @@ void loop()
   Serial.print("   ");
   Serial.print("\t");
 
-  Serial.print("goal_gyro_dir ");
-  Serial.print(goal_gyro_dir);
+  Serial.print("atack_goal_dis ");
+  Serial.print(atack_goal_dis);
   Serial.print("   ");
   Serial.print("\t");
+
 
   // Serial.print("court_dir ");
   // Serial.print(court_dir);
@@ -1217,16 +1211,16 @@ void loop()
   // Serial.print("com ");
   // Serial.print(com_mode);
   // Serial.print("   ");
-  // Serial.print("side ");
-  // Serial.print(side_line);
-  // Serial.print("   ");
-  // Serial.print("evacuation_deg ");
-  // Serial.print(line_evacuation_deg);
-  // if (is_halfout)
-  // {
+  Serial.print("side ");
+  Serial.print(side_line);
+  Serial.print("   ");
+  Serial.print("evacuation_deg ");
+  Serial.print(line_evacuation_deg);
+  if (is_halfout)
+  {
 
-  //   Serial.print("halfout");
-  // }
+    Serial.print("halfout");
+  }
   // Serial.print("kick_touch_time ");
   // Serial.print(kick_touch_time);
   // Serial.print("   ");
