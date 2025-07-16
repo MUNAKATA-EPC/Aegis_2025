@@ -3,6 +3,13 @@
 #include "engelline.hpp"
 
 double line_sensors_deg[16] = {
+    22.5 * 9,
+    22.5 * 10,
+    22.5 * 11,
+    22.5 * 12,
+    22.5 * 13,
+    22.5 * 14,
+    22.5 * 15,
     22.5 * 0,
     22.5 * 1,
     22.5 * 2,
@@ -12,13 +19,6 @@ double line_sensors_deg[16] = {
     22.5 * 6,
     22.5 * 7,
     22.5 * 8,
-    22.5 * 9,
-    22.5 * 10,
-    22.5 * 11,
-    22.5 * 12,
-    22.5 * 13,
-    22.5 * 14,
-    22.5 * 15,
 };
 
 int line_deg;
@@ -118,29 +118,20 @@ void process_engelline()
 
         double line_vec_x = 0, line_vec_y = 0;
 
-        if (mass1 < 500 && mass2 < 500)
+        for(int i = 0; i < 16; i++)
         {
-            line_vec_x += cos(radians(mass1));
-            line_vec_y += sin(radians(mass1));
-            line_vec_x += cos(radians(mass2));
-            line_vec_y += sin(radians(mass2));
-            // ラインセンサが2つしか検出されていな
-        }
-        else if (mass1 < 500 && mass2 == 500)
-        {
-            // ラインセンサが1つしか検出されていない場合
-            line_vec_x = cos(radians(mass1));
-            line_vec_y = sin(radians(mass1));
+            if (line_data[i] == 1)
+            {
+                line_vec_x += cos(radians(line_sensors_deg[i]));
+                line_vec_y += sin(radians(line_sensors_deg[i]));
+            }
         }
 
         //********************************************************ここ処理怪しいかもだから作り直した方がいい
         // line_deg = 360 - degrees(atan2(line_vec_y, line_vec_x));
         line_deg = degrees(atan2(line_vec_y, line_vec_x));
 
-        if (line_deg < 0)
-        {
-            line_deg += 360;
-        }
+        line_deg += 180;
 
         // if(line_deg <= 360)
         // {
@@ -150,6 +141,11 @@ void process_engelline()
         // {
         //     line_deg = 360 - (line_deg - 180) + 180;
         // }
+
+        if(abs(line_vec_x) <= 0.1 && abs(line_vec_y) <= 0.1)
+        {
+            line_deg = previous_line_deg;
+        }
     }
     else
     {
@@ -175,6 +171,9 @@ void process_engelline()
         if (!is_halfout)
         {
             line_first_deg = -1;
+            previous_line_deg = -1;
+            line_evacuation_deg = -1;
+            is_halfout = false;
         }
     }
 
@@ -182,7 +181,7 @@ void process_engelline()
     if (is_line_detected() && is_previous_line_detected())
     {
         // 前回とのラインの角度を比較して、もし大きく値がずれていたら「ハーフアウト」判定にする
-        if (!is_exist_deg_value_in_range(line_deg, line_first_deg, 75))
+        if (!is_exist_deg_value_in_range(line_deg, line_first_deg, 110))
         {
             is_halfout = true;
         }
@@ -191,7 +190,7 @@ void process_engelline()
             is_halfout = false;
 
             // 基準角度と大きくずれていなかったら、基準角度を現在の角度に置き換え
-            if (is_exist_deg_value_in_range(line_deg, line_first_deg, 40))
+            if (is_exist_deg_value_in_range(line_deg, line_first_deg, 45))
             {
                 line_first_deg = line_deg;
             }

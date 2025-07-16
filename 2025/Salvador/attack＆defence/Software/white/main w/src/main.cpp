@@ -224,6 +224,16 @@ void attacker_setup()
 
 void attacker()
 {
+  if(is_line_evacuation())
+  {
+    Move_Deg(line_evacuation_deg, 80);
+  }
+  else
+  {
+    Move_Deg(0, 0);
+  }
+
+  return;
 
   move_speed = 90;
   if (line_bit > 0 || front_line_val > LINE_FRONT)
@@ -697,8 +707,15 @@ void defence()
                 Move_Deg(mass1, 70);
               }
               else
-              {
-                Move_Deg(mass1, 20);
+              { 
+                if(IR_dis > 8)
+                {
+                  Move_Deg(mass1, 80);
+                }
+                else
+                {
+                  Move_Deg(mass1, 20);
+                }
               }
             }
             else
@@ -877,11 +894,11 @@ void defence()
                 {
                   Move_Deg(0, 0);
                 }
-                else if (goal_line_change + 10 > IR_dir)
+                else if (goal_line_change +57> IR_dir)
                 {
                   Move_Deg(90, 50);
                 }
-                else if (goal_line_change + 25 > IR_dir)
+                else if (goal_line_change + 60> IR_dir)
                 {
                   Move_Deg(90, 80);
                 }
@@ -969,7 +986,7 @@ void defence()
       if (Defence_line_change == -1)
       {
 
-        if (abs(IR_dir) < 100)
+        if (abs(IR_dir) < 90)
         {
 
           com_mode = 0;
@@ -1042,7 +1059,7 @@ void defence()
           {
             if (touch == 1)
             {
-              kicker_.kick(2000, 100);
+              kicker_.kick(2000, 50);
               Move_Deg(0, move_speed);
             }
             else
@@ -1066,7 +1083,7 @@ void defence()
                 else if (IR_line_change < 160)
                 {
 
-                  Move_Deg(IR_line_change + 70, move_speed);
+                  Move_Deg(IR_line_change + 90, move_speed);
                 }
                 else if (IR_line_change < 180)
                 {
@@ -1079,7 +1096,7 @@ void defence()
                 }
                 else if (IR_line_change < 300)
                 {
-                  Move_Deg(IR_line_change - 70, move_speed);
+                  Move_Deg(IR_line_change - 90, move_speed);
                 }
                 else if (IR_line_change < 330)
                 {
@@ -1305,10 +1322,10 @@ void loop()
   Serial.print("   ");
   Serial.print("\t");
 
-  // Serial.print("IR_dis ");
-  // Serial.print(IR_dis);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("IR_dis ");
+  Serial.print(IR_dis);
+  Serial.print("   ");
+  Serial.print("\t");
 
   // Serial.print("line_bit ");
   // Serial.print(line_bit);
@@ -1325,18 +1342,18 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  Serial.print("goal_dir ");
-  Serial.print(defence_goal_dir);
-  Serial.print("   ");
-  Serial.print("\t");
-  Serial.print("change_goal_dir ");
-  Serial.print(Defence_line_change);
-  Serial.print("   ");
-  Serial.print("\t");
-
-  // Serial.print("line_change ");
-  // Serial.print(goal_line_change);
+  // Serial.print("goal_dir ");
+  // Serial.print(defence_goal_dir);
   // Serial.print("   ");
+  // Serial.print("\t");
+  // Serial.print("change_goal_dir ");
+  // Serial.print(Defence_line_change);
+  // Serial.print("   ");
+  // Serial.print("\t");
+
+  Serial.print("line_change ");
+  Serial.print(goal_line_change);
+  Serial.print("   ");
 
   // Serial.print("atack_goal_dir ");
   // Serial.print(atack_goal_dir);
@@ -1356,10 +1373,10 @@ void loop()
   // Serial.print("camera_change ");
   // Serial.print(camera_change);
   // Serial.print("   ");
-  // Serial.print("\t");
-  Serial.print("IR_line_change ");
-  Serial.print(IR_line_change);
-  Serial.print("   ");
+  // // Serial.print("\t");
+  // Serial.print("IR_line_change ");
+  // Serial.print(IR_line_change);
+  // Serial.print("   ");
 
   // Serial.print("role_change ");
   // Serial.print(role_change);
