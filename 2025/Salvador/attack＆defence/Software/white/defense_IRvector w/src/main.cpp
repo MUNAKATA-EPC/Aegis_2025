@@ -170,10 +170,10 @@ void loop()
   // Serial.println("\t");
   // Serial.print(IR_No1);
   // Serial.print("\t");
-  // Serial.print(IR_dis);
-  // Serial.print("\t");
-  // Serial.print(IR_dir);
-  // Serial.print("\t");
+  Serial.print(IR_dis);
+  Serial.print("\t");
+  Serial.print(IR_dir);
+  Serial.print("\t");
   // Serial.print(No1_val);
   // Serial.print("\t");
 
@@ -210,5 +210,5 @@ void loop()
   // Serial.print(readMux(14));
   // Serial.print("  ");
   // Serial.print(readMux(15));
-  // Serial.println("");
+  Serial.println("");
 }
