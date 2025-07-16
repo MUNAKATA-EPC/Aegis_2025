@@ -5,21 +5,20 @@ from pyb import UART
 import math
 
 ###########################################
-goal_yellow =(58, 96, -33, 6, 27, 58)# ゴールの色取り用変数(黄色)##A
+goal_yellow =(84, 98, -24, 20, 23, 57)# ゴールの色取り用変数(黄色)##A
 
 #######################################################
 #コート
 #court_green =(62, 93, -19, 34, -28, 11)
 # カーペット
-court_green =(44, 88, -58, -34, -74, 20)
-
+court_green =(49, 78, -20, 23, -9, 23)
 
 
 court_light = (60, 82, -77, -33, -45, 41)
 #############################################################
 
 
-goal_blue =(62, 40, -9, 31, -17, -37)##A
+goal_blue =(68, 27, -23, -3, -83, -30)##A
 #############################################################
 
 black = (0, 36, -43, 41, -19, 12)
@@ -165,8 +164,7 @@ while True:
 
 
 
-    for blob in img.find_blobs([court_light
-    ], pixels_threshold=50, area_threshold=50, merge=True,margin=25):
+    for blob in img.find_blobs([court_green], pixels_threshold=50, area_threshold=50, merge=True,margin=25):
         img.draw_rectangle(blob.rect())
 
 
