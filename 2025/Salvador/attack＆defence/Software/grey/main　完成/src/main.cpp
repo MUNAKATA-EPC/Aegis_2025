@@ -311,6 +311,12 @@ void attacker()
       }
     }
   }
+  if (IR_dir > 60 && IR_dir < 300)
+  {
+    atack_goal_dir = -500;
+  }
+
+
   if (atack_goal_dir == -500)
   {
     PID_mode = 0;
