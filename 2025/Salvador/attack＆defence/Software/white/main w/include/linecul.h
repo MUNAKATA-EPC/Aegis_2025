@@ -146,7 +146,6 @@ void line_main()
             else
             { // 右　左　後
                 line_bit_cul -= 100000;
-             
             }
         }
     }
@@ -273,46 +272,76 @@ void line_main()
             }
         }
     }
+    
+    if (mass1 == mass2)
+    {
+        mass2 = 500;
+    }
 
+    // Serial.print("mass1,");
+    // Serial.print(mass1);
+    // Serial.print(" ");
+    // Serial.print("mass2,");
+    // Serial.print(mass2);
+    // Serial.print(" ");
+    // Serial.print("mass3,");
+    // Serial.print(mass3);
     if (line_data[0] == 1 && line_data[15] == 1)
     {
         if (mass_cou == 2)
         {
-            
+
             mass1 = ((mass1 + 360) + mass2) / 2;
             mass2 = mass1;
         }
         else if (mass_cou == 3)
         {
             int ab = mass2;
-            if(defence_goal_dir > 0){
-            mass2 = ((mass1 + 360) + mass3) / 2;
-            mass1 = ab;
-            mass3 = 500;
-            }else{
-            mass3 = ((mass1 + 360) + mass3) / 2;
-            mass1 = ab;
-            mass2 = 500;
+            if (defence_goal_dir > 0)
+            {
+                mass2 = ((mass1 + 360) + mass3) / 2;
+                mass1 = ab;
+                mass3 = 500;
+            }
+            else
+            {
+                mass1 = ((mass3 - 315) + mass1) / 2;
+                mass2 = ab;
+                mass3 = 500;
             }
         }
     }
-    Serial.print("mass1,");
-    Serial.print(mass1);
-    Serial.print(" ");
-    Serial.print("mass2,");
-    Serial.print(mass2);
-    Serial.print(" ");
-    Serial.print("mass3,");
-    Serial.print(mass3);
+    if(mass1 == mass2){
+        mass2 = 500;
+    }
+    // Serial.print("aa  ");
+    // Serial.print("mass1,");
+    // Serial.print(mass1);
+    // Serial.print(" ");
+    // Serial.print("mass2,");
+    // Serial.print(mass2);
+    // Serial.print(" ");
+    // Serial.print("mass3,");
+    // Serial.print(mass3);
+    if(mass1 < 500 && mass2 == 500){
+        mass_cou = 1;
+    }else if(mass1 < 500 && mass2 < 500 && mass3 == 500){
+        mass_cou = 2; 
+    }else if(mass1 < 500 && mass2 < 500 && mass3 < 500){
+        mass_cou = 3;
+    }
     
+
     if (mass1 < 500)
     {
         mass1 -= 180;
-       
+
         if (mass1 < 0)
         {
+
             mass1 += 360;
         }
+    
     }
     if (mass2 < 500)
     {
@@ -330,41 +359,59 @@ void line_main()
             mass3 += 360;
         }
     }
-
+    if(mass2 > mass3){
+        int abc = mass2;
+        mass2 = mass3;
+        mass3 = abc;
+        int def = mass1;
+        mass1 = mass2;
+        mass2 = def;
+    }
+    // Serial.print("bb  ,");
+    // Serial.print("mass1,");
+    // Serial.print(mass1);
+    // Serial.print(" ");
+    // Serial.print("mass2,");
+    // Serial.print(mass2);
+    // Serial.print(" ");
+    // Serial.print("mass3,");
+    // Serial.print(mass3);
 
     if (mass_cou == 2)
     {
         int abcd = mass1;
-        if(mass1 > mass2){
+        if (mass1 > mass2)
+        {
             mass1 = mass2;
             mass2 = abcd;
-
         }
     }
     else if (mass_cou == 3)
     {
-        int abcd = mass1;
-        int bcde = mass2;
-        if (defence_goal_dir > 0)
-        {
-            mass1 = bcde;
-            mass2 = mass3;
-            mass3 = abcd;
-        }
-        else
-        {
-            mass1 = mass3;
-            mass2 = abcd;
-            mass3 = bcde;
-        }
+        // if (defence_goal_dir > 0)
+        // {
+        //     mass1 = bcde;
+        //     mass2 = mass3;
+        //     mass3 = abcd;
+        // }
+        // else
+        // {
+        //     mass1 = mass3;
+        //     mass2 = abcd;
+        //     mass3 = bcde;
+        // }
     }
-    if (mass1 > mass2)
-    {
-        int a = mass1;
-        mass1 = mass2;
-        mass1 = a;
-    }
+    // if (mass1 > mass2)
+    // {
+    //     int a = mass1;
+    //     mass1 = mass2;
+    //     mass1 = a;
+    // }
 
+    // if (mass1 == mass2)
+    // {
+    //     mass2 = 500;
+    // }
     Serial.print("masscou,");
     Serial.print(mass_cou);
     Serial.print(" ");
@@ -383,6 +430,14 @@ void line_main()
     Serial.print("mode,");
     Serial.print(mode_line);
     Serial.print(" ");
+    Serial.print("mass1,");
+    Serial.print(mass1);
+    Serial.print(" ");
+    Serial.print("mass2,");
+    Serial.print(mass2);
+    Serial.print(" ");
+    Serial.print("mass3,");
+    Serial.print(mass3);
 
     // Serial.print("mass_lat,");
     // Serial.print(mass_lat);
