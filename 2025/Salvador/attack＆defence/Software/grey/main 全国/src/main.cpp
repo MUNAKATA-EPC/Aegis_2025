@@ -26,6 +26,9 @@
 #define TOUCH 13
 #define kicker 30
 
+#define communication1 27
+#define communication2 26
+
 //////oled関連///////////////////////////////////////////////////////////
 int move_speed = 100;
 
@@ -67,7 +70,6 @@ int serial_count = 0;
 int line_time_all;
 int line_time_deep;
 
-int goal_pid_select;
 int goal_gyro_dir;
 bool goal_mode;
 
@@ -112,49 +114,51 @@ void select_pid()
   if (atack_goal_dir == -500)
   {
     PID_mode = 0;
-    move_speed = 90;
+    move_speed = 80;
     goal_mode = true;
   }
   else
   {
-    if (-15 <= goal_gyro_dir && goal_gyro_dir <= 15) // マイナス４０、４２は中立点
+    if (-7 <= goal_gyro_dir && goal_gyro_dir <= 7) // マイナス４０、４２は中立点
     {
       goal_mode = true;
-      PID_mode = 0;
-      move_speed = 90;
+      PID_mode = 1;
+      move_speed = 85;
     }
-    else if (-15 < goal_gyro_dir && goal_gyro_dir < -30 && goal_mode == true)
+    else if (-7 < goal_gyro_dir && goal_gyro_dir < -35 && goal_mode == true)
     {
       goal_mode = true;
-      PID_mode = 0;
-      move_speed = 90;
+      PID_mode = 1;
+      move_speed = 85;
     }
-    else if (-15 < goal_gyro_dir && goal_gyro_dir < -30 && goal_mode == false)
+    else if (-7 < goal_gyro_dir && goal_gyro_dir < -35 && goal_mode == false)
     {
       goal_mode = false;
       PID_mode = 1;
       move_speed = 60;
     }
-    else if (goal_gyro_dir <= -30)
+    else if (goal_gyro_dir <= -35)
     {
       goal_mode = false;
+      atack_goal_dir += 10;
       PID_mode = 1;
       move_speed = 60;
     }
-    else if (15 < goal_gyro_dir && goal_gyro_dir < 30 && goal_mode == true)
+    else if (7 < goal_gyro_dir && goal_gyro_dir < 35 && goal_mode == true)
     {
       goal_mode = true;
-      PID_mode = 0;
-      move_speed = 90;
+      PID_mode = 1;
+      move_speed = 85;
     }
-    else if (15 < goal_gyro_dir && goal_gyro_dir < 30 && goal_mode == false)
+    else if (7 < goal_gyro_dir && goal_gyro_dir < 35 && goal_mode == false)
     {
       goal_mode = false;
       PID_mode = 1;
       move_speed = 60;
     }
-    else if (goal_gyro_dir >= 30)
+    else if (goal_gyro_dir >= 35)
     {
+      atack_goal_dir -= 10;
       goal_mode = false;
       PID_mode = 1;
       move_speed = 60;
@@ -223,207 +227,200 @@ void attacker_setup()
 
 void attacker()
 {
-
-  move_speed = 80;
+  move_speed=85;
   if (line_bit > 0 || front_line_val > LINE_FRONT)
   {
-    LINE_reaction.start(); // line timer スタート
-    LINE_reaction.tick();
-    line_time_all = LINE_reaction.get_value();
-    if (mass1 < 500)
-    {
-      if (is_halfout)
-      {
-        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-      }
-      else
-      {
-        Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-      }
-    }
-    else
-    {
-      if (is_halfout)
-      {
+    //   LINE_reaction.start(); // line timer スタート
+    //   LINE_reaction.tick();
+    //   line_time_all = LINE_reaction.get_value();
+    //   if (mass1 < 500)
+    //   {
+    //     if (is_halfout)
+    //     {
+    //       Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+    //     }
+    //     else
+    //     {
+    //       Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+    //     }
+    //   }
+    //   else
+    //   {
+    //     if (is_halfout)
+    //     {
 
-        Move_Deg(side_line * 45 + 180, move_speed + 10);
-      }
-      else
-      {
-        Move_Deg(side_line * 45, move_speed + 10);
-      }
-    }
-    // Move_Deg(court_dir, move_speed);
+    //       Move_Deg(side_line * 45 + 180, move_speed + 10);
+    //     }
+    //     else
+    //     {
+    //       Move_Deg(side_line * 45, move_speed + 10);
+    //     }
+    //   }
+    select_pid();
+    Move_Deg(court_dir, move_speed);
   }
   else
   {
-    if (line_time_all < 100 && line_time_all > 0)
-    {
-      LINE_reaction.tick();
-      line_time_all = LINE_reaction.get_value();
-      if (mass1 < 500)
-      {
-        if (is_halfout)
-        {
-          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-        }
-        else
-        {
-          Move_Deg(line_evacuation_deg + 180, move_speed + 10);
-        }
-      }
-      else
-      {
-        if (is_halfout)
-        {
+    // if (line_time_all < 100 && line_time_all > 0)
+    // {
+    //   LINE_reaction.tick();
+    //   line_time_all = LINE_reaction.get_value();
+    //   if (mass1 < 500)
+    //   {
+    //     if (is_halfout)
+    //     {
+    //       Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+    //     }
+    //     else
+    //     {
+    //       Move_Deg(line_evacuation_deg + 180, move_speed + 10);
+    //     }
+    //   }
+    //   else
+    //   {
+    //     if (is_halfout)
+    //     {
 
-          Move_Deg(side_line * 45 + 180, move_speed + 10);
-        }
-        else
-        {
-          Move_Deg(side_line * 45, move_speed + 10);
-        }
-      }
+    //       Move_Deg(side_line * 45 + 180, move_speed + 10);
+    //     }
+    //     else
+    //     {
+    //       Move_Deg(side_line * 45, move_speed + 10);
+    //     }
+    //   }
+    // }
+    // else
+    // {
+    LINE_reaction.reset();
+    line_time_all = LINE_reaction.get_value();
+    if (IR_dir == 500)
+    {
+      Move_Deg(0, 0);
     }
     else
     {
-      LINE_reaction.reset();
-      line_time_all = LINE_reaction.get_value();
-      if (IR_dir == 500)
+      if (touch == 1)
       {
-        Move_Deg(0, 0);
-      }
-      else
-      {
-        if (touch == 1)
+        PID_mode = 1;
+        if (IR_dir < 20 || IR_dir > 340)
         {
-          if (IR_dir < 20 || IR_dir > 340)
+          if (atack_goal_dis < 118)
           {
-            if (atack_goal_dis < 118)
+            if (atack_goal_dir <= 15 && atack_goal_dir >= -15)
             {
-              if (atack_goal_dir <= 15 && atack_goal_dir >= -15)
-              {
-                kicker_.kick(1000, 100);
-                KICK_fin = false;
-              }
-            }
-            else
-            {
-              kicker_.kick(1000, 100);
+              kicker_.kick(50, 100);
               KICK_fin = false;
             }
           }
-          Move_Deg(0, move_speed);
+          else
+          {
+            kicker_.kick(50, 300);
+            KICK_fin = false;
+          }
+        }
+        Move_Deg(0, move_speed);
+      }
+      else
+      {
+        // goal_dir = 300; // 入れたらゴールPID消去
+        KICK.reset();
+
+        if (IR_dis > 11)
+        {
+          Move_Deg(IR_dir, move_speed);
         }
         else
         {
-          // goal_dir = 300; // 入れたらゴールPID消去
-          KICK.reset();
-
-          if (IR_dis > 11)
+          if (IR_dir < 17)
           {
+            select_pid();
             Move_Deg(IR_dir, move_speed);
+          }
+          else if (IR_dir < 30)
+          {
+            select_pid();
+            if (PID_mode == 0)
+            {
+              Move_Deg(IR_dir + 35, move_speed);
+            }
+            else if (PID_mode == 1)
+            {
+              Move_Deg(IR_dir + 50, move_speed);
+            }
+          }
+          else if (IR_dir < 60)
+          {
+            select_pid();
+            if (PID_mode == 0)
+            {
+              Move_Deg(IR_dir + 65, move_speed);
+            }
+            else if (PID_mode == 1)
+            {
+              Move_Deg(IR_dir + 60, move_speed);
+            }
+          }
+          else if (IR_dir < 160)
+          {
+            select_pid();
+            Move_Deg(IR_dir + 50, move_speed);
+          }
+          else if (IR_dir < 180)
+          {
+            select_pid();
+            Move_Deg(IR_dir + 45, move_speed);
+          }
+          else if (IR_dir < 200)
+          {
+            select_pid();
+            Move_Deg(IR_dir - 45, move_speed);
+          }
+          else if (IR_dir < 300)
+          {
+            select_pid();
+            Move_Deg(IR_dir - 50, move_speed);
+          }
+          else if (IR_dir < 330)
+          {
+            select_pid();
+            if (PID_mode == 0)
+            {
+              Move_Deg(IR_dir - 65, move_speed);
+            }
+            else if (PID_mode == 1)
+            {
+              Move_Deg(IR_dir - 60, move_speed);
+            }
+          }
+          else if (IR_dir < 343)
+          {
+            select_pid();
+            if (PID_mode == 0)
+            {
+            Move_Deg(IR_dir - 35, move_speed);
+            }
+            else if (PID_mode == 1)
+            {
+              Move_Deg(IR_dir - 50, move_speed);
+            }
           }
           else
           {
-            if (IR_dir < 17)
-            {
-              select_pid();
-              Move_Deg(IR_dir, move_speed);
-            }
-            else if (IR_dir < 30)
-            {
-              select_pid();
-              if (goal_pid_select == 0)
-              {
-                Move_Deg(IR_dir + 30, move_speed);
-              }
-              else if (goal_pid_select == 1)
-              {
-                Move_Deg(IR_dir + 50, move_speed);
-              }
-            }
-            else if (IR_dir < 60)
-            {
-              select_pid();
-              if (goal_pid_select == 0)
-              {
-                Move_Deg(IR_dir + 40, move_speed);
-              }
-              else if (goal_pid_select == 1)
-              {
-                Move_Deg(IR_dir + 60, move_speed);
-              }
-            }
-            else if (IR_dir < 160)
-            {
-              select_pid();
-              Move_Deg(IR_dir + 50, move_speed);
-            }
-            else if (IR_dir < 180)
-            {
-              select_pid();
-              Move_Deg(IR_dir + 40, move_speed);
-            }
-            else if (IR_dir < 200)
-            {
-              select_pid();
-              Move_Deg(IR_dir - 40, move_speed);
-            }
-            else if (IR_dir < 300)
-            {
-              select_pid();
-              Move_Deg(IR_dir - 50, move_speed);
-            }
-            else if (IR_dir < 330)
-            {
-              select_pid();
-              if (goal_pid_select == 0)
-              {
-                Move_Deg(IR_dir - 40, move_speed);
-              }
-              else if (goal_pid_select == 1)
-              {
-                Move_Deg(IR_dir - 60, move_speed);
-              }
-            }
-            else if (IR_dir < 343)
-            {
-              select_pid();
-              if (goal_pid_select == 0)
-              {
-                Move_Deg(IR_dir - 30, move_speed);
-              }
-              else if (goal_pid_select == 1)
-              {
-                Move_Deg(IR_dir - 50, move_speed);
-              }
-            }
-            else
-            {
-              select_pid();
-              Move_Deg(IR_dir, move_speed);
-            }
+            select_pid();
+            Move_Deg(IR_dir, move_speed);
           }
         }
+        // }
       }
     }
   }
-  if (atack_goal_dir == -500 || goal_pid_select == 0)
+  if (atack_goal_dir == -500 )
   {
     goal_gyro_dir = atack_goal_dir - gyro_deg;
   }
   else
   {
     goal_gyro_dir = atack_goal_dir - gyro_deg + 180;
-  }
-  if (goal_pid_select == 0)
-  {
-    PID_mode = 0;
-  }
-  else
-  {
-    PID_mode = 1;
   }
 
   // Serial.print("line_time");
@@ -1177,82 +1174,89 @@ void loop()
     defence_setup();
   }
 
-  if (Start == 1)
-  {
-    if (role_change == 0)
+  // if (digitalRead(communication1) == 1 || digitalRead(communication2) == 1)
+  // {
+    if (Start == 1)
     {
-      if (start_first == true)
+      if (role_change == 0)
       {
-        KICKOFF.start();
-        start_first = false;
-      }
-      else
-      {
-        KICKOFF.tick();
-        kick_off_time = KICKOFF.get_value();
-        if (0 < kick_off_time && kick_off_time < 50 && touch == 1)
+        if (start_first == true)
         {
-          KICKOFF.reset();
-          STARTkick.start(); // line timer スタート
-          STARTkick.tick();
-          kick_touch_time = STARTkick.get_value();
-        }
-        else if (kick_off_time >= 100)
-        {
-          KICKOFF.reset();
-          kick_off_time = KICKOFF.get_value();
+          KICKOFF.start();
+          start_first = false;
         }
         else
         {
-          STARTkick.tick();
-          kick_touch_time = STARTkick.get_value();
-          if (0 < kick_touch_time && kick_touch_time < 400)
+          KICKOFF.tick();
+          kick_off_time = KICKOFF.get_value();
+          if (0 < kick_off_time && kick_off_time < 50 && touch == 1)
           {
-            if (RandomNumber <= 50)
-            {
-              Move_Deg(45, 100);
-            }
-            else
-            {
-              Move_Deg(-45, 100);
-            }
+            KICKOFF.reset();
+            STARTkick.start(); // line timer スタート
+            STARTkick.tick();
+            kick_touch_time = STARTkick.get_value();
           }
-          else if (kick_touch_time >= 400)
+          else if (kick_off_time >= 100)
           {
-            if (touch == 1)
-            {
-              kicker_.kick(5000, 0);
-              KICK_fin = false;
-            }
-            else
-            {
-              STARTkick.reset();
-            }
-            Move_Deg(0, move_speed);
+            KICKOFF.reset();
+            kick_off_time = KICKOFF.get_value();
           }
-          else if (kick_touch_time == 0)
+          else
           {
-            attacker();
+            STARTkick.tick();
+            kick_touch_time = STARTkick.get_value();
+            if (0 < kick_touch_time && kick_touch_time < 400)
+            {
+              if (RandomNumber <= 50)
+              {
+                Move_Deg(45, 100);
+              }
+              else
+              {
+                Move_Deg(-45, 100);
+              }
+            }
+            else if (kick_touch_time >= 400)
+            {
+              if (touch == 1)
+              {
+                kicker_.kick(5000, 0);
+                KICK_fin = false;
+              }
+              else
+              {
+                STARTkick.reset();
+              }
+              Move_Deg(0, move_speed);
+            }
+            else if (kick_touch_time == 0)
+            {
+              attacker();
+            }
           }
         }
+      }
+      else
+      {
+        defence();
       }
     }
     else
     {
-      defence();
-    }
-  }
-  else
-  {
-    if (mode_change == 1)
-    {
-      kicker_.kick(0, 100); // Kickerクラスのkickを呼ぶ
-      KICK_fin = false;
-      mode_change = 0;
-    }
+      if (mode_change == 1)
+      {
+        kicker_.kick(0, 100); // Kickerクラスのkickを呼ぶ
+        KICK_fin = false;
+        mode_change = 0;
+      }
 
-    move(0, 0, 0, 0);
-  }
+      move(0, 0, 0, 0);
+    }
+  // }
+  // else
+  // {
+  //   move(0, 0, 0, 0);
+  // }
 
   Serial.print("IR_dir ");
   Serial.print(IR_dir);
@@ -1284,10 +1288,10 @@ void loop()
   // Serial.print("   ");
   // Serial.print("\t");
 
-  // Serial.print("goal_dir ");
-  // Serial.print(defence_goal_dir);
-  // Serial.print("   ");
-  // Serial.print("\t");
+  Serial.print("goal_dir ");
+  Serial.print(atack_goal_dir);
+  Serial.print("   ");
+  Serial.print("\t");
 
   // Serial.print("line_change ");
   // Serial.print(goal_line_change);
