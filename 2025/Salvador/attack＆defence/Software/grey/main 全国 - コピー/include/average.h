@@ -4,9 +4,9 @@ class average
 private:
   bool now_detected;
   bool previous_detected;
-  int stock_rotation_term = 12; // 移動平均の期間（標本数）
+  int stock_rotation_term = 30; // 移動平均の期間（標本数）
   int stock_rotation_number = 0; // 輪番用のカウント
-  float stock_data[12];         // データをストックする配列
+  float stock_data[30];         // データをストックする配列
   float new_data;                // センサから取得した最新のデータ
 
   bool ave = false;
@@ -49,13 +49,5 @@ public:
     return result;
   }
 };
-average No1;
-average Nopra1;
-average Nopra2;
-average Nopra3;
-average Nominu1;
-average Nominu2;
-average Nominu3;
-average IR_dis_ave;
-
-
+average v_ave;
+average v_deg_ave;
