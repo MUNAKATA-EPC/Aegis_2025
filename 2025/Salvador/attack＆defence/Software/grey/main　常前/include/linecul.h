@@ -25,7 +25,7 @@ int front_line_val;
 
 int defence_goal_dir;
 
-#define LINE_FRONT 200
+#define LINE_FRONT 195
 
 void line_main()
 {
@@ -399,4 +399,4 @@ int line_dir_stop(int mass_1, int mass_2)
     line_dir = atan2(mass_sin, mass_cos) * 180 / PI;
     return line_dir;
 }
-#endif // LINECUL_H
+#endif // LINECUL_H;

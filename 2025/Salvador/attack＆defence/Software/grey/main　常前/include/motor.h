@@ -190,7 +190,8 @@ int PID_gain(float P_gain, float D_gain, float P_gain_cam, int D_gain_cam, int o
 
   // 比例
   // val_P = (outputdata - 512.1) * P_gain;
-
+  // PID_mode = 0;
+  // PID_mode = 0;
   if (PID_mode == 1)
   {
 

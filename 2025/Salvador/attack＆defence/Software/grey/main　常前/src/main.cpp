@@ -30,7 +30,7 @@
 #define communication2 26
 
 //////oled関連///////////////////////////////////////////////////////////
-int move_speed = 70;
+int move_speed = 90;
 
 int oled_start_;
 bool start_sceen = true;
@@ -114,7 +114,7 @@ void select_speed()
 {
   if (atack_goal_dir == -500)
   {
-    move_speed = 70;
+    move_speed = 85;
     goal_mode = true;
   }
   else
@@ -122,7 +122,7 @@ void select_speed()
     if (10 <= goal_gyro_dir && goal_gyro_dir <= 10) // マイナス４０、４２は中立点
     {
       goal_mode = true;
-      move_speed = 75;
+      move_speed = 80;
     }
     else if (-10 < goal_gyro_dir && goal_gyro_dir < -35 && goal_mode == true)
     {
@@ -210,6 +210,69 @@ void attacker_setup()
   }
 }
 
+int go_back()
+{
+  if (court_dir < 17)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(0, move_speed);
+  }
+  else if (court_dir < 30)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(court_dir + 35, move_speed);
+  }
+  else if (court_dir < 60)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(court_dir + 65, move_speed);
+  }
+  else if (court_dir < 160)
+  {
+    PID_mode = 0;
+    select_speed();
+    Move_Deg(court_dir + 50, move_speed);
+  }
+  else if (court_dir < 180)
+  {
+    PID_mode = 0;
+    select_speed();
+    Move_Deg(IR_dir + 45, move_speed);
+  }
+  else if (court_dir < 200)
+  {
+    PID_mode = 0;
+    select_speed();
+    Move_Deg(court_dir - 45, move_speed);
+  }
+  else if (court_dir < 300)
+  {
+    PID_mode = 0;
+    select_speed();
+    Move_Deg(court_dir - 50, move_speed);
+  }
+  else if (court_dir < 330)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(court_dir - 65, move_speed);
+  }
+  else if (court_dir < 343)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(court_dir - 35, move_speed);
+  }
+  else if (court_dir < 365)
+  {
+    PID_mode = 1;
+    select_speed();
+    Move_Deg(0, move_speed);
+  }
+}
 void attacker()
 {
   if (line_bit > 0 || front_line_val > LINE_FRONT)
@@ -238,13 +301,13 @@ void attacker()
             }
             else
             {
-              kicker_.kick(100, 200);
+              kicker_.kick(100, 0);
               KICK_fin = false;
             }
           }
           else
           {
-            kicker_.kick(100, 300);
+            kicker_.kick(100, 200);
             KICK_fin = false;
           }
         }
@@ -259,7 +322,7 @@ void attacker()
         {
           PID_mode = 0;
           select_speed();
-          Move_Deg(IR_dir, 70);
+          Move_Deg(IR_dir, 100);
         }
         else
         {
@@ -1066,7 +1129,7 @@ void loop()
   // atack_goal_dir = yellow_dir;
   // atack_goal_dis = yellow_dis;
 
-  goal_gyro_dir = atack_goal_dir - gyro_deg;//////////////////////////////////////////////////////////////////////////////////
+  goal_gyro_dir = atack_goal_dir - gyro_deg; //////////////////////////////////////////////////////////////////////////////////
 
   if (role_change == 0)
   {
@@ -1083,25 +1146,25 @@ void loop()
 
   // if (digitalRead(communication1) == 1 || digitalRead(communication2) == 1)
   // {
-  if (Start == 1)
-  {
-    if (role_change == 0)
+    if (Start == 1)
     {
-      attacker();
+      if (role_change == 0)
+      {
+        attacker();
+      }
+      else
+      {
+        defence();
+      }
     }
     else
     {
-      defence();
+      move(0, 0, 0, 0);
     }
-  }
-  else
-  {
-    move(0, 0, 0, 0);
-  }
   // }
   // else
   // {
-  //   move(0, 0, 0, 0);
+  //     move(0, 0, 0, 0);
   // }
 
   Serial.print("IR_dir ");
